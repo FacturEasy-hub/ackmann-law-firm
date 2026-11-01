@@ -13,12 +13,12 @@
   scroll-behavior: smooth;
 
   --background: #ffffff;
-  --foreground: #132442; /* deep navy */
+  --foreground: #031427; /* deep navy — sampled from the firm logo */
   --surface: #f3f4f6; /* cool light grey — alternating panels, input fills */
   --muted: #5b6472; /* slate grey — clears 4.5:1 AA text contrast on --background */
   --border: #dbdfe4;
-  --accent: #8a6d3b; /* muted brass/gold */
-  --accent-soft: #f1e9d7;
+  --accent: #b3976c; /* brass/gold — sampled from the firm logo */
+  --accent-soft: #f3efe8;
 
   --font-sans: var(--font-body);
   --font-serif: var(--font-display);

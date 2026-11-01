@@ -25,8 +25,8 @@ export default function GlobalError({
           justifyContent: "center",
           gap: "1.5rem",
           padding: "4rem 1.5rem",
-          backgroundColor: "#f7f5f1",
-          color: "#1c1c1a",
+          backgroundColor: "#ffffff",
+          color: "#031427",
           fontFamily: "Georgia, 'Times New Roman', serif",
         }}
       >
@@ -38,9 +38,9 @@ export default function GlobalError({
           type="button"
           onClick={() => reset()}
           style={{
-            border: "1px solid #1c1c1a",
-            backgroundColor: "#1c1c1a",
-            color: "#f7f5f1",
+            border: "1px solid #031427",
+            backgroundColor: "#031427",
+            color: "#ffffff",
             padding: "0.75rem 1.5rem",
             fontFamily: "system-ui, sans-serif",
             fontSize: "0.875rem",

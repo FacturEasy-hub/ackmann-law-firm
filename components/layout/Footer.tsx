@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
 import { Container } from "@/components/ui/Container";
@@ -26,9 +27,18 @@ export function Footer() {
       <Container className="flex flex-col gap-12 py-16 md:py-20">
         <div className="flex flex-col gap-10 md:flex-row md:justify-between">
           <div className="flex flex-col gap-2">
-            <p className="font-[family-name:var(--font-display)] text-lg">
-              {siteConfig.firmName}
-            </p>
+            <div className="flex items-center gap-3">
+              <Image
+                src="/brand/ja-monogram.webp"
+                alt=""
+                width={265}
+                height={215}
+                className="h-8 w-8 rounded-sm object-cover"
+              />
+              <p className="font-[family-name:var(--font-display)] text-lg">
+                {siteConfig.firmName}
+              </p>
+            </div>
             <address className="not-italic text-sm text-muted">
               {siteConfig.address.line1}, {siteConfig.address.line2}
               <br />

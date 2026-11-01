@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/lib/i18n/navigation";
@@ -21,7 +22,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background">
       <Container className="flex h-16 items-center justify-between lg:h-20">
-        {/* JA monogram, used sparingly — rendered as a seal-style badge. */}
+        {/* JA monogram, used sparingly. */}
         <motion.span
           className="inline-block"
           whileHover={{ scale: 1.06 }}
@@ -31,9 +32,16 @@ export function Header() {
           <Link
             href="/"
             aria-label="ACKMANN LAW FIRM"
-            className={`flex h-10 w-10 items-center justify-center rounded-sm bg-foreground font-[family-name:var(--font-display)] text-lg text-background ${focusRing}`}
+            className={`flex h-10 w-10 items-center justify-center overflow-hidden rounded-sm ${focusRing}`}
           >
-            JA
+            <Image
+              src="/brand/ja-monogram.webp"
+              alt=""
+              width={265}
+              height={215}
+              priority
+              className="h-full w-full object-cover"
+            />
           </Link>
         </motion.span>
 
