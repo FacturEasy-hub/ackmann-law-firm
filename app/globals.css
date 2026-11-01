@@ -1,9 +1,8 @@
 @import "tailwindcss";
 
 /*
- * Brand tokens — SPEC.md Section 5 (Brand System / Color direction).
- * Off-white/ivory, deep charcoal, black, muted sage, stone grey, warm neutral.
- * Sage accent stays restrained — never a dominant color.
+ * Brand tokens — classic corporate direction: white, deep navy, a
+ * restrained brass/gold accent. Serious and institutional, not editorial.
  */
 :root {
   /* ContactForm's error summary (components/forms/ContactForm.tsx) links to
@@ -13,13 +12,13 @@
      that preference set. */
   scroll-behavior: smooth;
 
-  --background: #f7f5f1; /* off-white / ivory */
-  --foreground: #1c1c1a; /* deep charcoal */
-  --surface: #ffffff;
-  --muted: #726f66; /* stone grey — darkened from spec draft to clear 4.5:1 AA text contrast on --background */
-  --border: #e2ded4;
-  --accent: #6f8271; /* muted sage */
-  --accent-soft: #e4e9e2;
+  --background: #ffffff;
+  --foreground: #132442; /* deep navy */
+  --surface: #f3f4f6; /* cool light grey — alternating panels, input fills */
+  --muted: #5b6472; /* slate grey — clears 4.5:1 AA text contrast on --background */
+  --border: #dbdfe4;
+  --accent: #8a6d3b; /* muted brass/gold */
+  --accent-soft: #f1e9d7;
 
   --font-sans: var(--font-body);
   --font-serif: var(--font-display);

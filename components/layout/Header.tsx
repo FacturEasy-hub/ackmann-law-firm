@@ -21,7 +21,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background">
       <Container className="flex h-16 items-center justify-between lg:h-20">
-        {/* SPEC.md Section 23/5: "JA monogram micro-animation", used sparingly. */}
+        {/* JA monogram, used sparingly — rendered as a seal-style badge. */}
         <motion.span
           className="inline-block"
           whileHover={{ scale: 1.06 }}
@@ -31,7 +31,7 @@ export function Header() {
           <Link
             href="/"
             aria-label="ACKMANN LAW FIRM"
-            className={`font-[family-name:var(--font-display)] text-lg tracking-wide ${focusRing}`}
+            className={`flex h-10 w-10 items-center justify-center rounded-sm bg-foreground font-[family-name:var(--font-display)] text-lg text-background ${focusRing}`}
           >
             JA
           </Link>

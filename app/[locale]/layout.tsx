@@ -4,7 +4,7 @@ import { hasLocale } from "next-intl";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MotionConfig } from "framer-motion";
-import { Fraunces, Inter, Frank_Ruhl_Libre, Heebo } from "next/font/google";
+import { Playfair_Display, Inter, Frank_Ruhl_Libre, Heebo } from "next/font/google";
 import { routing } from "@/lib/i18n/routing";
 import { isRtl, siteConfig } from "@/lib/config";
 import { Header } from "@/components/layout/Header";
@@ -28,11 +28,11 @@ import "../globals.css";
 // that's actually rendering. `font-display: swap` (next/font's default)
 // prevents invisible-text blocking either way.
 
-// Latin: editorial serif display + neutral sans body (SPEC.md Section 5).
-const displayLatin = Fraunces({
+// Latin: classic corporate serif display + neutral sans body.
+const displayLatin = Playfair_Display({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "600", "700"],
 });
 const bodyLatin = Inter({
   variable: "--font-body",

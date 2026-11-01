@@ -19,9 +19,9 @@ type NativeButtonProps = CommonProps & {
 type ButtonProps = LinkButtonProps | NativeButtonProps;
 
 const base =
-  "inline-flex items-center justify-center rounded-none border px-6 py-3 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground";
+  "inline-flex items-center justify-center rounded-sm border px-6 py-3 text-sm font-medium tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground";
 
-// SPEC.md Section 11: primary filled/restrained, secondary outline. No pills, no shadows.
+// Primary filled navy, secondary outline. No pills, no shadows.
 const variants: Record<Variant, string> = {
   primary:
     "border-foreground bg-foreground text-background hover:bg-foreground/90",
