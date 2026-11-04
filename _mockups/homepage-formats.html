@@ -1,0 +1,829 @@
+<title>Ackmann Law Firm — 5 pistes de format</title>
+<style>
+  :root {
+    --navy: #031427;
+    --gold: #b3976c;
+    --gold-soft: #f3efe8;
+    --paper: #ffffff;
+    --mist: #f4f5f3;
+    --line: #dde0de;
+    --ink: #031427;
+    --ink-soft: #52606a;
+    --font-display: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    --font-body: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #0a1522;
+    --mist: #0f1d2d;
+    --line: #223244;
+    --ink: #eef1f4;
+    --ink-soft: #9aa7b3;
+    --gold-soft: #22201a;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0a1522;
+      --mist: #0f1d2d;
+      --line: #223244;
+      --ink: #eef1f4;
+      --ink-soft: #9aa7b3;
+      --gold-soft: #22201a;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--mist);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  button { font: inherit; }
+
+  /* ---- switcher bar ---- */
+  .switcher {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--navy);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 10px 14px;
+    overflow-x: auto;
+  }
+  .switcher .label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9aa7b3;
+    padding: 0 14px 0 2px;
+    white-space: nowrap;
+  }
+  .switcher button {
+    appearance: none;
+    border: 1px solid transparent;
+    background: transparent;
+    color: #c7cedb;
+    padding: 8px 14px;
+    font-size: 13px;
+    border-radius: 3px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+  }
+  .switcher button:hover { background: rgba(255,255,255,0.08); color: #fff; }
+  .switcher button[aria-current="true"] {
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .viewport {
+    height: calc(100vh - 49px);
+    overflow-y: auto;
+  }
+  .format { display: none; }
+  .format[data-active="true"] { display: block; }
+
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+
+  .ph-image {
+    position: relative;
+    background:
+      repeating-linear-gradient(135deg, rgba(179,151,108,0.14) 0 2px, transparent 2px 16px),
+      var(--navy);
+    display: flex;
+    align-items: flex-end;
+  }
+  .ph-image span {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.55);
+    padding: 14px 18px;
+  }
+
+  /* ================= FORMAT 1 — corporate institutional ================= */
+  .f1 { background: var(--paper); color: var(--ink); }
+  .f1 .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+  .f1 header {
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; background: var(--paper); z-index: 5;
+  }
+  .f1 header .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .f1 .brand { display: flex; align-items: center; gap: 12px; }
+  .f1 .brand img { width: 34px; height: 28px; border-radius: 2px; }
+  .f1 .brand span { font-family: var(--font-display); font-size: 15px; letter-spacing: 0.04em; }
+  .f1 nav { display: flex; gap: 28px; font-size: 13.5px; color: var(--ink-soft); }
+  .f1 nav a { text-decoration: none; }
+  .f1 nav a:hover { color: var(--ink); }
+
+  .f1 .hero { padding: 96px 0 72px; }
+  .f1 .hero .grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: start; }
+  .f1 .eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .f1 .hero h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.4rem, 4vw, 3.4rem); line-height: 1.12; margin-bottom: 20px; }
+  .f1 .hero p.lede { font-size: 17px; color: var(--ink-soft); max-width: 46ch; line-height: 1.6; margin-bottom: 32px; }
+  .f1 .btnrow { display: flex; gap: 12px; }
+  .f1 .btn { display: inline-flex; align-items: center; padding: 12px 22px; font-size: 13.5px; border-radius: 2px; text-decoration: none; border: 1px solid var(--navy); }
+  .f1 .btn.primary { background: var(--navy); color: #fff; }
+  .f1 .btn.ghost { color: var(--navy); }
+
+  .f1 .statcard { border: 1px solid var(--line); padding: 32px; display: flex; flex-direction: column; gap: 20px; }
+  .f1 .statcard .row { display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 14px; font-size: 13.5px; }
+  .f1 .statcard .row:first-child { border-top: none; padding-top: 0; }
+  .f1 .statcard .row dt { color: var(--ink-soft); }
+  .f1 .statcard .row dd { margin: 0; font-family: var(--font-mono); }
+
+  .f1 .tiles { padding: 72px 0; border-top: 1px solid var(--line); }
+  .f1 .tiles .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 36px; }
+  .f1 .tiles h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.6rem; }
+  .f1 .tilegrid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .f1 .tile { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 26px 22px; }
+  .f1 .tile h3 { font-family: var(--font-display); font-weight: 400; font-size: 17px; margin-bottom: 8px; }
+  .f1 .tile p { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
+
+  .f1 .founder { padding: 72px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: center; }
+  .f1 .founder .ph-image { aspect-ratio: 1; }
+  .f1 .founder h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.5rem; margin-bottom: 6px; }
+  .f1 .founder .role { font-family: var(--font-mono); font-size: 12px; color: var(--ink-soft); margin-bottom: 14px; }
+  .f1 .founder p.bio { font-size: 15px; line-height: 1.65; max-width: 62ch; color: var(--ink-soft); }
+
+  .f1 footer { border-top: 1px solid var(--line); padding: 44px 0; display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-soft); }
+  .f1 footer .cols { display: flex; gap: 72px; }
+  .f1 footer .cols div { display: flex; flex-direction: column; gap: 6px; }
+
+  @media (max-width: 860px) {
+    .f1 .hero .grid { grid-template-columns: 1fr; }
+    .f1 .tilegrid { grid-template-columns: repeat(2, 1fr); }
+    .f1 .founder { grid-template-columns: 1fr; }
+    .f1 nav { display: none; }
+  }
+
+  /* ================= FORMAT 2 — minimal letterhead ================= */
+  .f2 { background: #fff; color: #111; font-family: var(--font-display); }
+  .f2 .sheet { max-width: 640px; margin: 0 auto; padding: 90px 28px 120px; }
+  .f2 .mark { text-align: center; font-size: 13px; letter-spacing: 0.3em; margin-bottom: 10px; }
+  .f2 .mark b { font-weight: 400; }
+  .f2 hr { border: none; border-top: 1px solid #ccc; margin: 26px 0 40px; }
+  .f2 nav { display: flex; justify-content: flex-end; gap: 22px; font-size: 12.5px; font-family: var(--font-body); color: #777; margin-bottom: 70px; }
+  .f2 nav a { text-decoration: none; }
+  .f2 nav a:hover { color: #111; }
+
+  .f2 .hero { text-align: center; margin-bottom: 90px; }
+  .f2 .hero .kicker { font-family: var(--font-body); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #999; margin-bottom: 22px; }
+  .f2 .hero h1 { font-weight: 400; font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.25; margin: 0 auto 26px; max-width: 24ch; }
+  .f2 .hero p { font-family: var(--font-body); font-size: 15px; color: #555; max-width: 46ch; margin: 0 auto 22px; line-height: 1.7; }
+  .f2 .hero .links { font-family: var(--font-body); font-size: 13.5px; }
+  .f2 .hero .links a { text-decoration: underline; text-underline-offset: 3px; color: #111; margin: 0 10px; }
+
+  .f2 .index { margin-bottom: 90px; }
+  .f2 .index .kicker { font-family: var(--font-body); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #999; margin-bottom: 18px; text-align: center; }
+  .f2 .index .row { display: flex; justify-content: space-between; padding: 14px 0; border-top: 1px solid #e6e6e6; font-size: 16px; }
+  .f2 .index .row:last-child { border-bottom: 1px solid #e6e6e6; }
+  .f2 .index .row span.n { font-family: var(--font-body); font-size: 12px; color: #aaa; align-self: center; }
+
+  .f2 .counsel { text-align: center; margin-bottom: 90px; }
+  .f2 .counsel .kicker { font-family: var(--font-body); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #999; margin-bottom: 18px; }
+  .f2 .counsel p { font-size: 16px; line-height: 1.8; max-width: 52ch; margin: 0 auto; color: #333; }
+  .f2 .counsel .sig { margin-top: 18px; font-size: 14px; color: #777; font-family: var(--font-body); }
+
+  .f2 footer { text-align: center; font-family: var(--font-body); font-size: 12.5px; color: #999; border-top: 1px solid #e6e6e6; padding-top: 28px; }
+  .f2 footer p { margin-bottom: 4px; }
+
+  :root[data-theme="dark"] .f2, html:not([data-theme="light"]) .f2 { background: #fff; color: #111; }
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme="light"]) .f2 { background: #efece6; }
+  }
+
+  /* ================= FORMAT 3 — editorial / magazine ================= */
+  .f3 { background: var(--paper); color: var(--ink); }
+  .f3 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 30px; }
+  .f3 .masthead { text-align: center; padding: 52px 0 18px; }
+  .f3 .masthead h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.4rem, 5vw, 3.6rem); letter-spacing: 0.01em; }
+  .f3 .masthead .meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-top: 10px; }
+  .f3 .rule { border: none; border-top: 2px solid var(--ink); margin: 0; }
+  .f3 .byline { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .f3 .byline nav { display: flex; gap: 22px; color: var(--ink-soft); }
+  .f3 .byline nav a { text-decoration: none; }
+  .f3 .byline nav a:hover { color: var(--ink); }
+
+  .f3 .feature { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  .f3 .feature .cat { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .f3 .feature h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.2; margin-bottom: 22px; max-width: 18ch; }
+  .f3 .feature .cols { columns: 2; column-gap: 40px; font-size: 15.5px; line-height: 1.75; color: var(--ink-soft); }
+  .f3 .feature .cols p { margin-bottom: 1em; }
+
+  .f3 .insights { padding: 56px 0; }
+  .f3 .insights .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 30px; }
+  .f3 .insights h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.5rem; }
+  .f3 .artgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+  .f3 .art .cat { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .f3 .art h3 { font-family: var(--font-display); font-weight: 400; font-size: 18px; line-height: 1.35; margin-bottom: 10px; }
+  .f3 .art p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 10px; }
+  .f3 .art .date { font-size: 11.5px; color: var(--ink-soft); font-family: var(--font-mono); }
+
+  .f3 .about { padding: 56px 0; border-top: 1px solid var(--line); display: flex; gap: 48px; align-items: baseline; }
+  .f3 .about .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); white-space: nowrap; }
+  .f3 .about p { font-size: 14.5px; line-height: 1.7; color: var(--ink-soft); max-width: 60ch; }
+
+  .f3 footer { border-top: 1px solid var(--ink); padding: 26px 0 44px; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-soft); }
+
+  @media (max-width: 860px) {
+    .f3 .feature .cols { columns: 1; }
+    .f3 .artgrid { grid-template-columns: 1fr; }
+    .f3 .about { flex-direction: column; gap: 10px; }
+  }
+
+  /* ================= FORMAT 4 — conversion / lead-gen ================= */
+  .f4 { background: var(--paper); color: var(--ink); }
+  .f4 .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  .f4 header { background: var(--navy); color: #fff; }
+  .f4 header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .f4 header .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 14px; }
+  .f4 header .brand img { width: 28px; height: 23px; border-radius: 2px; }
+  .f4 header .right { display: flex; align-items: center; gap: 20px; font-size: 13px; }
+  .f4 header .tel { color: var(--gold); font-family: var(--font-mono); }
+  .f4 header .cta { background: var(--gold); color: var(--navy); padding: 9px 16px; border-radius: 2px; font-weight: 600; text-decoration: none; font-size: 12.5px; }
+
+  .f4 .hero { background: var(--mist); padding: 64px 0; }
+  .f4 .hero .grid { display: grid; grid-template-columns: 1.2fr 0.9fr; gap: 48px; align-items: start; }
+  .f4 .hero .eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .f4 .hero h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.18; margin-bottom: 18px; }
+  .f4 .hero p.lede { font-size: 15.5px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 26px; max-width: 42ch; }
+  .f4 .badges { display: flex; flex-wrap: wrap; gap: 10px; }
+  .f4 .badge { border: 1px solid var(--line); background: #fff; padding: 7px 12px; border-radius: 999px; font-size: 12px; color: var(--ink-soft); }
+
+  .f4 .formcard { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 28px; box-shadow: 0 10px 30px -18px rgba(3,20,39,0.25); }
+  .f4 .formcard h3 { font-family: var(--font-display); font-weight: 400; font-size: 18px; margin-bottom: 4px; }
+  .f4 .formcard p.sub { font-size: 12.5px; color: var(--ink-soft); margin-bottom: 18px; }
+  .f4 .formcard label { display: block; font-size: 11.5px; color: var(--ink-soft); margin-bottom: 5px; }
+  .f4 .formcard .field { margin-bottom: 14px; }
+  .f4 .formcard input, .f4 .formcard textarea { width: 100%; border: 1px solid var(--line); border-radius: 3px; padding: 10px 11px; font-size: 13.5px; font-family: var(--font-body); background: var(--mist); color: var(--ink); }
+  .f4 .formcard button { width: 100%; background: var(--navy); color: #fff; border: none; padding: 12px; border-radius: 3px; font-size: 13.5px; cursor: pointer; }
+
+  .f4 .tiles { padding: 60px 0; }
+  .f4 .tiles h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.5rem; text-align: center; margin-bottom: 34px; }
+  .f4 .tilegrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .f4 .tile { border: 1px solid var(--line); border-radius: 6px; padding: 22px; }
+  .f4 .tile h3 { font-family: var(--font-display); font-weight: 400; font-size: 16px; margin-bottom: 8px; }
+  .f4 .tile p { font-size: 13px; color: var(--ink-soft); line-height: 1.5; margin-bottom: 12px; }
+  .f4 .tile a { font-size: 12.5px; color: var(--gold); text-decoration: none; font-weight: 600; }
+
+  .f4 .quote { background: var(--navy); color: #fff; padding: 56px 0; text-align: center; }
+  .f4 .quote blockquote { font-family: var(--font-display); font-size: clamp(1.2rem, 2.6vw, 1.6rem); max-width: 50ch; margin: 0 auto 14px; line-height: 1.5; }
+  .f4 .quote cite { font-size: 12px; font-style: normal; color: rgba(255,255,255,0.55); font-family: var(--font-mono); }
+
+  .f4 .faq { padding: 56px 0; max-width: 760px; margin: 0 auto; }
+  .f4 .faq h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.4rem; margin-bottom: 26px; text-align: center; }
+  .f4 .faq details { border-bottom: 1px solid var(--line); padding: 16px 0; }
+  .f4 .faq summary { cursor: pointer; font-size: 14.5px; font-weight: 600; }
+  .f4 .faq p { font-size: 13.5px; color: var(--ink-soft); margin-top: 10px; line-height: 1.6; }
+
+  .f4 .finalcta { background: var(--gold-soft); padding: 44px 0; text-align: center; }
+  .f4 .finalcta h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.4rem; margin-bottom: 16px; }
+  .f4 .finalcta a { background: var(--navy); color: #fff; padding: 12px 26px; border-radius: 3px; text-decoration: none; font-size: 13.5px; }
+
+  .f4 footer { background: var(--navy); color: rgba(255,255,255,0.65); padding: 30px 0; text-align: center; font-size: 12px; }
+
+  @media (max-width: 860px) {
+    .f4 .hero .grid { grid-template-columns: 1fr; }
+    .f4 .tilegrid { grid-template-columns: 1fr; }
+  }
+
+  /* ================= FORMAT 5 — full-bleed portrait ================= */
+  .f5 { background: var(--paper); color: var(--ink); }
+  .f5 .ovhead { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; padding: 22px 36px; color: #fff; background: linear-gradient(to bottom, rgba(3,20,39,0.55), transparent); }
+  .f5 .ovhead .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 14px; letter-spacing: 0.04em; }
+  .f5 .ovhead .brand img { width: 30px; height: 24px; border-radius: 2px; }
+  .f5 .ovhead nav { display: flex; gap: 26px; font-size: 13px; }
+  .f5 .ovhead nav a { text-decoration: none; color: rgba(255,255,255,0.88); }
+
+  .f5 .bleed-hero { height: 88vh; margin-top: -72px; display: flex; align-items: flex-end; padding: 0 36px 64px; color: #fff; }
+  .f5 .bleed-hero .eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+  .f5 .bleed-hero h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.08; max-width: 16ch; margin-bottom: 22px; }
+  .f5 .bleed-hero p { font-size: 16px; color: rgba(255,255,255,0.8); max-width: 42ch; line-height: 1.6; }
+
+  .f5 .intro { max-width: 1180px; margin: 0 auto; padding: 84px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .f5 .intro .eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .f5 .intro h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.9rem; margin-bottom: 18px; }
+  .f5 .intro p { font-size: 15px; color: var(--ink-soft); line-height: 1.7; }
+  .f5 .intro .ph-image { aspect-ratio: 4/5; }
+
+  .f5 .split { height: 66vh; }
+
+  .f5 .list { max-width: 900px; margin: 0 auto; padding: 84px 32px; }
+  .f5 .list .eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 26px; text-align: center; }
+  .f5 .list .row { display: flex; justify-content: space-between; align-items: baseline; padding: 20px 0; border-top: 1px solid var(--line); }
+  .f5 .list .row:last-child { border-bottom: 1px solid var(--line); }
+  .f5 .list .row h3 { font-family: var(--font-display); font-weight: 400; font-size: 19px; }
+  .f5 .list .row p { font-size: 13px; color: var(--ink-soft); max-width: 34ch; text-align: right; }
+
+  .f5 footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 34px 36px; display: flex; justify-content: space-between; font-size: 12.5px; }
+
+  @media (max-width: 860px) {
+    .f5 .intro { grid-template-columns: 1fr; }
+    .f5 .list .row { flex-direction: column; gap: 6px; }
+    .f5 .list .row p { text-align: left; }
+    .f5 .ovhead nav { display: none; }
+  }
+
+  /* ================= FORMAT 6 — mix (F1 corporate + F4 contact card, discreet) ================= */
+  .f6 { background: var(--paper); color: var(--ink); }
+  .f6 .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+  .f6 header { border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--paper); z-index: 5; }
+  .f6 header .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .f6 .brand { display: flex; align-items: center; gap: 12px; }
+  .f6 .brand img { width: 34px; height: 28px; border-radius: 2px; }
+  .f6 .brand span { font-family: var(--font-display); font-size: 15px; letter-spacing: 0.04em; }
+  .f6 nav { display: flex; gap: 28px; font-size: 13.5px; color: var(--ink-soft); }
+  .f6 nav a { text-decoration: none; }
+  .f6 nav a:hover { color: var(--ink); }
+
+  .f6 .eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+
+  .f6 .hero { padding: 96px 0 72px; }
+  .f6 .hero .grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: start; }
+  .f6 .hero h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.4rem, 4vw, 3.2rem); line-height: 1.12; margin-bottom: 20px; }
+  .f6 .hero p.lede { font-size: 17px; color: var(--ink-soft); max-width: 46ch; line-height: 1.6; margin-bottom: 28px; }
+  .f6 .btnrow { display: flex; gap: 12px; }
+  .f6 .btn { display: inline-flex; align-items: center; padding: 12px 22px; font-size: 13.5px; border-radius: 2px; text-decoration: none; border: 1px solid var(--navy); }
+  .f6 .btn.primary { background: var(--navy); color: #fff; }
+  .f6 .btn.ghost { color: var(--navy); }
+
+  .f6 .formcard { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: 30px; }
+  .f6 .formcard h3 { font-family: var(--font-display); font-weight: 400; font-size: 17px; margin-bottom: 4px; }
+  .f6 .formcard p.sub { font-size: 12.5px; color: var(--ink-soft); margin-bottom: 20px; }
+  .f6 .formcard label { display: block; font-size: 11.5px; color: var(--ink-soft); margin-bottom: 5px; }
+  .f6 .formcard .field { margin-bottom: 14px; }
+  .f6 .formcard input, .f6 .formcard textarea { width: 100%; border: 1px solid var(--line); border-radius: 3px; padding: 10px 11px; font-size: 13.5px; font-family: var(--font-body); background: var(--mist); color: var(--ink); }
+  .f6 .formcard button { width: 100%; background: var(--navy); color: #fff; border: none; padding: 12px; border-radius: 3px; font-size: 13.5px; cursor: pointer; }
+
+  .f6 .photostrip { padding: 0 0 72px; }
+  .f6 .photostrip .ph-image { height: 220px; border-radius: 4px; }
+  .f6 .ph-photo { background: repeating-linear-gradient(135deg, rgba(255,255,255,0.07) 0 2px, transparent 2px 16px), linear-gradient(180deg, #333 0%, #0a0a0a 100%); }
+
+  .f6 .method { padding: 72px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .f6 .method .eyebrow { text-align: center; margin-bottom: 36px; }
+  .f6 .method .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .f6 .method .step { position: relative; display: flex; flex-direction: column; gap: 10px; }
+  .f6 .method .step:not(:last-child)::after { content: "→"; position: absolute; top: 2px; right: -27px; color: var(--line); font-size: 16px; }
+  .f6 .method .step .num { font-family: var(--font-mono); font-size: 12px; color: var(--gold); }
+  .f6 .method .step h3 { font-family: var(--font-display); font-weight: 400; font-size: 19px; }
+  .f6 .method .step p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.6; }
+
+  .f6 .tiles { padding: 72px 0; }
+  .f6 .tiles .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 36px; }
+  .f6 .tiles h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.6rem; }
+  .f6 .tilegrid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .f6 .tile { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 26px 22px; }
+  .f6 .tile h3 { font-family: var(--font-display); font-weight: 400; font-size: 17px; margin-bottom: 8px; }
+  .f6 .tile p { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
+
+  .f6 .founder { padding: 72px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: center; }
+  .f6 .founder .ph-image { aspect-ratio: 1; }
+  .f6 .founder h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.5rem; margin-bottom: 6px; }
+  .f6 .founder .role { font-family: var(--font-mono); font-size: 12px; color: var(--ink-soft); margin-bottom: 14px; }
+  .f6 .founder p.bio { font-size: 15px; line-height: 1.65; max-width: 62ch; color: var(--ink-soft); }
+
+  .f6 .finalcta { background: var(--gold-soft); padding: 56px 0; text-align: center; border-top: 1px solid var(--line); }
+  .f6 .finalcta h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.5rem; margin-bottom: 16px; }
+  .f6 .finalcta p { font-size: 14.5px; color: var(--ink-soft); max-width: 46ch; margin: 0 auto 22px; line-height: 1.6; }
+  .f6 .finalcta a { background: var(--navy); color: #fff; padding: 12px 26px; border-radius: 2px; text-decoration: none; font-size: 13.5px; }
+
+  .f6 footer { border-top: 1px solid var(--line); padding: 44px 0; display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-soft); }
+  .f6 footer .cols { display: flex; gap: 72px; }
+  .f6 footer .cols div { display: flex; flex-direction: column; gap: 6px; }
+
+  @media (max-width: 860px) {
+    .f6 .hero .grid { grid-template-columns: 1fr; }
+    .f6 .method .steps { grid-template-columns: 1fr; gap: 28px; }
+    .f6 .method .step:not(:last-child)::after { display: none; }
+    .f6 .tilegrid { grid-template-columns: repeat(2, 1fr); }
+    .f6 .founder { grid-template-columns: 1fr; }
+    .f6 nav { display: none; }
+  }
+</style>
+
+<div class="switcher" role="tablist" aria-label="Choix du format">
+  <span class="label">Ackmann — Comparatif de formats</span>
+  <button type="button" class="focus-ring" data-target="f1" aria-current="true">1 · Corporate</button>
+  <button type="button" class="focus-ring" data-target="f2">2 · Lettre à en-tête</button>
+  <button type="button" class="focus-ring" data-target="f3">3 · Éditorial</button>
+  <button type="button" class="focus-ring" data-target="f4">4 · Conversion</button>
+  <button type="button" class="focus-ring" data-target="f5">5 · Plein cadre</button>
+  <button type="button" class="focus-ring" data-target="f6">6 · Mix (F1 + F4)</button>
+</div>
+
+<div class="viewport">
+
+  <!-- ============ FORMAT 1 ============ -->
+  <section class="format f1" id="f1" data-active="true">
+    <header>
+      <div class="wrap">
+        <div class="brand"><img src="ja-monogram.png" alt="" /><span>ACKMANN LAW FIRM</span></div>
+        <nav>
+          <a href="#" class="focus-ring">Cabinet</a>
+          <a href="#" class="focus-ring">Expertise</a>
+          <a href="#" class="focus-ring">Jonathan Ackmann</a>
+          <a href="#" class="focus-ring">Insights</a>
+          <a href="#" class="focus-ring">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="wrap hero">
+      <div class="grid">
+        <div>
+          <p class="eyebrow">Jérusalem, Israël</p>
+          <h1>Conseil juridique indépendant en affaires, finance et régulation.</h1>
+          <p class="lede">Ackmann Law Firm accompagne entreprises, investisseurs et particuliers à l'intersection du droit, de la finance et de la régulation.</p>
+          <div class="btnrow">
+            <a href="#" class="btn primary focus-ring">Découvrir le cabinet</a>
+            <a href="#" class="btn ghost focus-ring">Contact</a>
+          </div>
+        </div>
+        <dl class="statcard">
+          <div class="row"><dt>Fondation</dt><dd>2024</dd></div>
+          <div class="row"><dt>Barreau</dt><dd>Israël — N° 100674</dd></div>
+          <div class="row"><dt>Siège</dt><dd>Jérusalem</dd></div>
+          <div class="row"><dt>Langues</dt><dd>EN / FR / HE</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="wrap tiles">
+      <div class="head">
+        <h2>Expertise</h2>
+        <a href="#" class="focus-ring" style="font-size:13px;color:var(--ink-soft);text-decoration:underline;">Tout voir</a>
+      </div>
+      <div class="tilegrid">
+        <div class="tile"><h3>Banque &amp; Finance</h3><p>Structuration, conformité et contentieux bancaires.</p></div>
+        <div class="tile"><h3>Régulation financière</h3><p>Accompagnement face aux autorités de supervision.</p></div>
+        <div class="tile"><h3>Corporate &amp; Commercial</h3><p>Sociétés, contrats et opérations commerciales.</p></div>
+        <div class="tile"><h3>Conformité</h3><p>Programmes de conformité et gestion du risque.</p></div>
+        <div class="tile"><h3>Droit public &amp; administratif</h3><p>Relations avec l'administration et le secteur public.</p></div>
+        <div class="tile"><h3>Résolution des litiges</h3><p>Contentieux et modes alternatifs de résolution.</p></div>
+        <div class="tile"><h3>Clients privés</h3><p>Conseil patrimonial et juridique individualisé.</p></div>
+      </div>
+    </div>
+
+    <div class="wrap founder">
+      <div class="ph-image"><span>Portrait — à venir</span></div>
+      <div>
+        <h3>Jonathan Ackmann</h3>
+        <p class="role">Avocat — Barreau d'Israël N° 100674</p>
+        <p class="bio">Jonathan Ackmann conseille les clients à l'intersection du droit, de la finance et de la régulation, fort d'une expérience en conformité bancaire, au sein d'institutions financières et du secteur public.</p>
+      </div>
+    </div>
+
+    <footer class="wrap">
+      <div>© 2026 Ackmann Law Firm</div>
+      <div class="cols">
+        <div><span>105 Derech Beit Lehem, 5e étage</span><span>Jérusalem, Israël</span></div>
+        <div><span>058-793-1228</span><span>jonathan.ackmann@gmail.com</span></div>
+      </div>
+    </footer>
+  </section>
+
+  <!-- ============ FORMAT 2 ============ -->
+  <section class="format f2" id="f2">
+    <div class="sheet">
+      <p class="mark"><b>J A</b> &nbsp; ACKMANN &nbsp; LAW &nbsp; FIRM</p>
+      <hr />
+      <nav>
+        <a href="#" class="focus-ring">Cabinet</a>
+        <a href="#" class="focus-ring">Expertise</a>
+        <a href="#" class="focus-ring">Contact</a>
+      </nav>
+
+      <div class="hero">
+        <p class="kicker">Jérusalem, Israël</p>
+        <h1>Conseil juridique indépendant en affaires, finance et régulation.</h1>
+        <p>Ackmann Law Firm accompagne entreprises, investisseurs et particuliers à l'intersection du droit, de la finance et de la régulation.</p>
+        <p class="links"><a href="#" class="focus-ring">Découvrir le cabinet</a> · <a href="#" class="focus-ring">Nous contacter</a></p>
+      </div>
+
+      <div class="index">
+        <p class="kicker">Expertise</p>
+        <div class="row"><span>Banque &amp; Finance</span><span class="n">01</span></div>
+        <div class="row"><span>Régulation financière</span><span class="n">02</span></div>
+        <div class="row"><span>Corporate &amp; Commercial</span><span class="n">03</span></div>
+        <div class="row"><span>Conformité</span><span class="n">04</span></div>
+        <div class="row"><span>Droit public &amp; administratif</span><span class="n">05</span></div>
+        <div class="row"><span>Résolution des litiges</span><span class="n">06</span></div>
+        <div class="row"><span>Clients privés</span><span class="n">07</span></div>
+      </div>
+
+      <div class="counsel">
+        <p class="kicker">Le fondateur</p>
+        <p>Jonathan Ackmann conseille les clients à l'intersection du droit, de la finance et de la régulation, fort d'une expérience en conformité bancaire, au sein d'institutions financières et du secteur public.</p>
+        <p class="sig">Jonathan Ackmann — Barreau d'Israël N° 100674</p>
+      </div>
+
+      <footer>
+        <p>105 Derech Beit Lehem, 5e étage, Jérusalem, Israël</p>
+        <p>058-793-1228 — jonathan.ackmann@gmail.com</p>
+      </footer>
+    </div>
+  </section>
+
+  <!-- ============ FORMAT 3 ============ -->
+  <section class="format f3" id="f3">
+    <div class="wrap masthead">
+      <h1>Ackmann Law Firm</h1>
+      <p class="meta">Cabinet d'avocats — Jérusalem — Droit des affaires, finance &amp; régulation</p>
+    </div>
+    <hr class="rule" />
+    <div class="wrap byline">
+      <span>N° 1 — Automne 2026</span>
+      <nav>
+        <a href="#" class="focus-ring">Insights</a>
+        <a href="#" class="focus-ring">Expertise</a>
+        <a href="#" class="focus-ring">Cabinet</a>
+        <a href="#" class="focus-ring">Contact</a>
+      </nav>
+    </div>
+
+    <div class="wrap feature">
+      <p class="cat">Analyse</p>
+      <h2>Pourquoi un conseil indépendant en régulation financière change la donne</h2>
+      <div class="cols">
+        <p>Les institutions financières opérant en Israël font face à un cadre réglementaire de plus en plus dense, où la rapidité d'interprétation compte autant que la rigueur juridique.</p>
+        <p>Un conseil indépendant, sans les lourdeurs d'un grand cabinet généraliste, permet un accompagnement direct et continu — de la structuration initiale jusqu'au contentieux, si nécessaire.</p>
+      </div>
+    </div>
+
+    <div class="wrap insights">
+      <div class="head">
+        <h2>Derniers Insights</h2>
+        <a href="#" class="focus-ring" style="font-size:13px;color:var(--ink-soft);text-decoration:underline;">Archives</a>
+      </div>
+      <div class="artgrid">
+        <article class="art"><p class="cat">Conformité</p><h3>Ce que change la nouvelle directive bancaire</h3><p>Lecture des obligations renforcées pour les établissements de crédit.</p><p class="date">à venir</p></article>
+        <article class="art"><p class="cat">Corporate</p><h3>Structurer une levée de fonds transfrontalière</h3><p>Points d'attention juridiques pour les investisseurs étrangers.</p><p class="date">à venir</p></article>
+        <article class="art"><p class="cat">Régulation</p><h3>Autorités de supervision : anticiper plutôt que subir</h3><p>Construire une relation de confiance avec le régulateur.</p><p class="date">à venir</p></article>
+      </div>
+    </div>
+
+    <div class="wrap about">
+      <span class="label">Le cabinet</span>
+      <p>Fondé par Jonathan Ackmann (Barreau d'Israël N° 100674), Ackmann Law Firm conseille entreprises, investisseurs et particuliers à l'intersection du droit, de la finance et de la régulation, depuis Jérusalem.</p>
+    </div>
+
+    <footer class="wrap">
+      <span>Ackmann Law Firm — Jérusalem, Israël</span>
+      <span>058-793-1228 · jonathan.ackmann@gmail.com</span>
+    </footer>
+  </section>
+
+  <!-- ============ FORMAT 4 ============ -->
+  <section class="format f4" id="f4">
+    <header>
+      <div class="wrap">
+        <div class="brand"><img src="ja-monogram.png" alt="" />ACKMANN LAW FIRM</div>
+        <div class="right">
+          <span class="tel">058-793-1228</span>
+          <a href="#" class="cta focus-ring">Prendre rendez-vous</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="hero">
+      <div class="wrap grid">
+        <div>
+          <p class="eyebrow">Jérusalem, Israël</p>
+          <h1>Un conseil juridique direct, pour vos enjeux de finance et de régulation.</h1>
+          <p class="lede">Première consultation sous 48h. Réponse personnelle de Jonathan Ackmann, Avocat au Barreau d'Israël.</p>
+          <div class="badges">
+            <span class="badge">Barreau d'Israël N° 100674</span>
+            <span class="badge">Expérience Banque Leumi</span>
+            <span class="badge">Secteur public</span>
+          </div>
+        </div>
+        <div class="formcard">
+          <h3>Discuter de votre dossier</h3>
+          <p class="sub">Réponse sous 48h ouvrées.</p>
+          <div class="field"><label>Nom</label><input type="text" placeholder="Votre nom" /></div>
+          <div class="field"><label>Email</label><input type="email" placeholder="vous@exemple.com" /></div>
+          <div class="field"><label>Votre situation</label><textarea rows="3" placeholder="Décrivez brièvement votre besoin"></textarea></div>
+          <button type="button" class="focus-ring">Envoyer ma demande</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap tiles">
+      <h2>Comment pouvons-nous vous aider ?</h2>
+      <div class="tilegrid">
+        <div class="tile"><h3>Banque &amp; Finance</h3><p>Structuration, conformité et contentieux bancaires.</p><a href="#" class="focus-ring">Discuter de mon dossier →</a></div>
+        <div class="tile"><h3>Régulation financière</h3><p>Accompagnement face aux autorités de supervision.</p><a href="#" class="focus-ring">Discuter de mon dossier →</a></div>
+        <div class="tile"><h3>Corporate &amp; Commercial</h3><p>Sociétés, contrats et opérations commerciales.</p><a href="#" class="focus-ring">Discuter de mon dossier →</a></div>
+      </div>
+    </div>
+
+    <div class="quote">
+      <blockquote>« Jonathan a traduit une situation réglementaire complexe en une marche à suivre claire, en quelques jours. »</blockquote>
+      <cite>Témoignage client — à venir</cite>
+    </div>
+
+    <div class="faq">
+      <h2>Questions fréquentes</h2>
+      <details open>
+        <summary>Proposez-vous un premier échange gratuit ?</summary>
+        <p>Un premier échange permet de cadrer votre besoin avant tout engagement.</p>
+      </details>
+      <details>
+        <summary>Travaillez-vous avec des clients hors d'Israël ?</summary>
+        <p>Oui, notamment sur les dossiers transfrontaliers en finance et régulation.</p>
+      </details>
+      <details>
+        <summary>Quels sont vos délais de réponse ?</summary>
+        <p>Les demandes reçoivent une réponse personnelle sous 48h ouvrées.</p>
+      </details>
+    </div>
+
+    <div class="finalcta">
+      <h2>Parlons de votre dossier.</h2>
+      <a href="#" class="focus-ring">Prendre rendez-vous</a>
+    </div>
+
+    <footer>Ackmann Law Firm — 105 Derech Beit Lehem, Jérusalem — 058-793-1228</footer>
+  </section>
+
+  <!-- ============ FORMAT 5 ============ -->
+  <section class="format f5" id="f5">
+    <div class="ovhead">
+      <div class="brand"><img src="ja-monogram.png" alt="" />ACKMANN LAW FIRM</div>
+      <nav>
+        <a href="#" class="focus-ring">Cabinet</a>
+        <a href="#" class="focus-ring">Expertise</a>
+        <a href="#" class="focus-ring">Contact</a>
+      </nav>
+    </div>
+
+    <div class="bleed-hero ph-image">
+      <div>
+        <p class="eyebrow">Jérusalem, Israël</p>
+        <h1>Conseil juridique indépendant en affaires, finance et régulation.</h1>
+        <p>Ackmann Law Firm accompagne entreprises, investisseurs et particuliers depuis Jérusalem.</p>
+      </div>
+    </div>
+
+    <div class="intro">
+      <div>
+        <p class="eyebrow">Le fondateur</p>
+        <h2>Jonathan Ackmann</h2>
+        <p>Avocat au Barreau d'Israël (N° 100674), Jonathan Ackmann conseille les clients à l'intersection du droit, de la finance et de la régulation, fort d'une expérience en conformité bancaire, au sein d'institutions financières et du secteur public.</p>
+      </div>
+      <div class="ph-image"><span>Portrait — à venir</span></div>
+    </div>
+
+    <div class="split ph-image"><span>Architecture — Jérusalem, à venir</span></div>
+
+    <div class="list">
+      <p class="eyebrow">Expertise</p>
+      <div class="row"><h3>Banque &amp; Finance</h3><p>Structuration, conformité et contentieux bancaires.</p></div>
+      <div class="row"><h3>Régulation financière</h3><p>Accompagnement face aux autorités de supervision.</p></div>
+      <div class="row"><h3>Corporate &amp; Commercial</h3><p>Sociétés, contrats et opérations commerciales.</p></div>
+      <div class="row"><h3>Conformité</h3><p>Programmes de conformité et gestion du risque.</p></div>
+      <div class="row"><h3>Résolution des litiges</h3><p>Contentieux et modes alternatifs de résolution.</p></div>
+    </div>
+
+    <footer>
+      <span>Ackmann Law Firm — Jérusalem, Israël</span>
+      <span>058-793-1228 · jonathan.ackmann@gmail.com</span>
+    </footer>
+  </section>
+
+  <!-- ============ FORMAT 6 — MIX (F1 + F4, discreet) ============ -->
+  <section class="format f6" id="f6">
+    <header>
+      <div class="wrap">
+        <div class="brand"><img src="ja-monogram.png" alt="" /><span>ACKMANN LAW FIRM</span></div>
+        <nav>
+          <a href="#" class="focus-ring">Cabinet</a>
+          <a href="#" class="focus-ring">Expertise</a>
+          <a href="#" class="focus-ring">Jonathan Ackmann</a>
+          <a href="#" class="focus-ring">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="wrap hero">
+      <div class="grid">
+        <div>
+          <p class="eyebrow">Jérusalem, Israël</p>
+          <h1>Conseil juridique indépendant en affaires, finance et régulation.</h1>
+          <p class="lede">Ackmann Law Firm accompagne entreprises, investisseurs et particuliers à l'intersection du droit, de la finance et de la régulation.</p>
+          <div class="btnrow">
+            <a href="#" class="btn primary focus-ring">Découvrir le cabinet</a>
+            <a href="#" class="btn ghost focus-ring">Contact</a>
+          </div>
+        </div>
+        <div class="formcard">
+          <h3>Nous contacter</h3>
+          <p class="sub">Nous répondons personnellement à chaque message.</p>
+          <div class="field"><label>Nom</label><input type="text" placeholder="Votre nom" /></div>
+          <div class="field"><label>Email</label><input type="email" placeholder="vous@exemple.com" /></div>
+          <div class="field"><label>Votre situation</label><textarea rows="3" placeholder="Décrivez brièvement votre besoin"></textarea></div>
+          <button type="button" class="focus-ring">Envoyer</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap photostrip">
+      <div class="ph-image ph-photo"><span>Jérusalem — à venir (N&amp;B)</span></div>
+    </div>
+
+    <div class="wrap method">
+      <p class="eyebrow">Notre méthode</p>
+      <div class="steps">
+        <div class="step">
+          <span class="num">01</span>
+          <h3>Étudier le dossier</h3>
+          <p>Comprendre en profondeur la situation, les enjeux juridiques et le contexte avant toute recommandation.</p>
+        </div>
+        <div class="step">
+          <span class="num">02</span>
+          <h3>Construire une stratégie</h3>
+          <p>Définir une ligne d'action claire, adaptée au dossier, à la réglementation et aux objectifs du client.</p>
+        </div>
+        <div class="step">
+          <span class="num">03</span>
+          <h3>Mener le dossier</h3>
+          <p>Accompagner la mise en œuvre jusqu'à son terme, avec un interlocuteur unique et direct.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap tiles">
+      <div class="head">
+        <h2>Expertise</h2>
+        <a href="#" class="focus-ring" style="font-size:13px;color:var(--ink-soft);text-decoration:underline;">Tout voir</a>
+      </div>
+      <div class="tilegrid">
+        <div class="tile"><h3>Banque &amp; Finance</h3><p>Structuration, conformité et contentieux bancaires.</p></div>
+        <div class="tile"><h3>Régulation financière</h3><p>Accompagnement face aux autorités de supervision.</p></div>
+        <div class="tile"><h3>Corporate &amp; Commercial</h3><p>Sociétés, contrats et opérations commerciales.</p></div>
+        <div class="tile"><h3>Conformité</h3><p>Programmes de conformité et gestion du risque.</p></div>
+        <div class="tile"><h3>Droit public &amp; administratif</h3><p>Relations avec l'administration et le secteur public.</p></div>
+        <div class="tile"><h3>Résolution des litiges</h3><p>Contentieux et modes alternatifs de résolution.</p></div>
+        <div class="tile"><h3>Clients privés</h3><p>Conseil patrimonial et juridique individualisé.</p></div>
+      </div>
+    </div>
+
+    <div class="wrap founder">
+      <div class="ph-image"><span>Portrait — à venir</span></div>
+      <div>
+        <h3>Jonathan Ackmann</h3>
+        <p class="role">Avocat — Barreau d'Israël N° 100674</p>
+        <p class="bio">Jonathan Ackmann conseille les clients à l'intersection du droit, de la finance et de la régulation, fort d'une expérience en conformité bancaire, au sein d'institutions financières et du secteur public.</p>
+      </div>
+    </div>
+
+    <div class="wrap finalcta">
+      <h2>Parlons de votre dossier.</h2>
+      <p>Vous pouvez nous exposer votre situation directement ; nous répondons personnellement.</p>
+      <a href="#" class="focus-ring">Nous contacter</a>
+    </div>
+
+    <footer class="wrap">
+      <div>© 2026 Ackmann Law Firm</div>
+      <div class="cols">
+        <div><span>105 Derech Beit Lehem, 5e étage</span><span>Jérusalem, Israël</span></div>
+        <div><span>058-793-1228</span><span>jonathan.ackmann@gmail.com</span></div>
+      </div>
+    </footer>
+  </section>
+
+</div>
+
+<script>
+  var buttons = document.querySelectorAll('.switcher button');
+  var formats = document.querySelectorAll('.format');
+  var viewport = document.querySelector('.viewport');
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var target = btn.getAttribute('data-target');
+      buttons.forEach(function (b) { b.setAttribute('aria-current', 'false'); });
+      formats.forEach(function (f) { f.removeAttribute('data-active'); });
+      btn.setAttribute('aria-current', 'true');
+      document.getElementById(target).setAttribute('data-active', 'true');
+      viewport.scrollTop = 0;
+    });
+  });
+</script>

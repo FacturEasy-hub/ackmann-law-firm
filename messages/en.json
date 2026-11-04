@@ -17,7 +17,26 @@
     "title": "ACKMANN LAW FIRM",
     "positioning": "Independent legal counsel for business, finance and regulation.",
     "ctaPrimary": "Explore the firm",
-    "ctaSecondary": "Contact"
+    "ctaSecondary": "Contact",
+    "contactHeading": "Get in touch",
+    "contactSub": "Every message is read personally."
+  },
+  "method": {
+    "eyebrow": "Our approach",
+    "steps": {
+      "study": {
+        "title": "Study the case",
+        "body": "Understand the situation, the legal issues and the context in depth before any recommendation."
+      },
+      "strategy": {
+        "title": "Build a strategy",
+        "body": "Define a clear course of action, tailored to the case, the regulation and the client's objectives."
+      },
+      "lead": {
+        "title": "Lead the case",
+        "body": "See the matter through to its conclusion, with a single, direct point of contact."
+      }
+    }
   },
   "intro": {
     "statement": "Ackmann Law Firm advises companies, investors and individuals at the intersection of law, finance and regulation. The practice combines legal analysis with a practical understanding of banking, compliance and public-sector processes — translating complex regulatory environments into clear, actionable guidance for clients in Israel and abroad."

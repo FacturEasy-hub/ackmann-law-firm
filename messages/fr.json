@@ -17,10 +17,29 @@
     "title": "ACKMANN LAW FIRM",
     "positioning": "Conseil juridique indépendant pour les entreprises, la finance et la réglementation.",
     "ctaPrimary": "Découvrir le cabinet",
-    "ctaSecondary": "Contact"
+    "ctaSecondary": "Contact",
+    "contactHeading": "Nous contacter",
+    "contactSub": "Chaque message est lu personnellement."
   },
   "intro": {
     "statement": "Ackmann Law Firm conseille entreprises, investisseurs et particuliers à la croisée du droit, de la finance et de la réglementation. Le cabinet allie analyse juridique et compréhension pratique des enjeux bancaires, de conformité et administratifs — pour traduire des environnements réglementaires complexes en conseils clairs et actionnables, en Israël comme à l'international."
+  },
+  "method": {
+    "eyebrow": "Notre méthode",
+    "steps": {
+      "study": {
+        "title": "Étudier le dossier",
+        "body": "Comprendre en profondeur la situation, les enjeux juridiques et le contexte avant toute recommandation."
+      },
+      "strategy": {
+        "title": "Construire une stratégie",
+        "body": "Définir une ligne d'action claire, adaptée au dossier, à la réglementation et aux objectifs du client."
+      },
+      "lead": {
+        "title": "Mener le dossier",
+        "body": "Accompagner la mise en œuvre jusqu'à son terme, avec un interlocuteur unique et direct."
+      }
+    }
   },
   "pillars": {
     "law": {

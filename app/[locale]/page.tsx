@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/sections/Hero";
+import { MethodSection } from "@/components/sections/MethodSection";
 import { EditorialIntro } from "@/components/sections/EditorialIntro";
 import { SignaturePillars } from "@/components/sections/SignaturePillars";
 import { PracticeList } from "@/components/sections/PracticeList";
@@ -35,6 +36,7 @@ export default async function HomePage({
   return (
     <main>
       <Hero />
+      <MethodSection />
       <EditorialIntro />
       <SignaturePillars />
       <PracticeList />
