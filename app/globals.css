@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 /*
- * Brand tokens — classic corporate direction: white, deep navy, a
- * restrained brass/gold accent. Serious and institutional, not editorial.
+ * Brand tokens — white/cream dominant, deep navy reserved as a deliberate
+ * anchor (footer, the final CTA) rather than the default text color
+ * everywhere, a restrained brass/gold accent throughout. Private-banking
+ * reference (Pictet, Rothschild & Co): navy anchors, it doesn't blanket.
  */
 :root {
   /* ContactForm's error summary (components/forms/ContactForm.tsx) links to
@@ -13,15 +15,33 @@
   scroll-behavior: smooth;
 
   --background: #ffffff;
-  --foreground: #031427; /* deep navy — sampled from the firm logo */
+  --foreground: #121a1d; /* near-black ink — body text, not the brand navy */
   --surface: #f3f4f6; /* cool light grey — alternating panels, input fills */
   --muted: #5b6472; /* slate grey — clears 4.5:1 AA text contrast on --background */
   --border: #dbdfe4;
   --accent: #b3976c; /* brass/gold — sampled from the firm logo */
   --accent-soft: #f3efe8;
+  --brand-navy: #031427; /* sampled from the firm logo — anchor moments only */
 
   --font-sans: var(--font-body);
   --font-serif: var(--font-display);
+}
+
+/*
+ * The one deliberate dark anchor (footer, final CTA) — navy background,
+ * with --foreground/--muted/--border/--background flipped to their light
+ * counterparts so every component already built on those tokens (buttons,
+ * links, dividers, focus rings) renders correctly with no extra classes.
+ */
+.surface-inverse {
+  --background: var(--brand-navy);
+  --foreground: #f4f1e9;
+  --muted: #a7b0bd;
+  --border: #1c2b3d;
+  /* `color` is inherited, not re-evaluated per element — without this,
+     any text here with no explicit text-* class keeps inheriting body's
+     stale dark-ink color instead of this scope's light --foreground. */
+  color: var(--foreground);
 }
 
 @theme inline {
@@ -31,6 +51,7 @@
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-accent: var(--accent);
+  --color-brand-navy: var(--brand-navy);
   --color-accent-soft: var(--accent-soft);
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);

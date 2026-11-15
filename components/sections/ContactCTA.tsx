@@ -6,14 +6,16 @@ import { Reveal } from "@/components/motion/Reveal";
 
 /**
  * SPEC.md Section 13/5.7 — restrained finish, one action, no "Book Now" /
- * "Free Consultation" language. No `border-b`: Footer already has its own
- * `border-t`, avoiding a doubled line between them.
+ * "Free Consultation" language. `surface-inverse`: the one other deliberate
+ * navy anchor besides the footer (private-banking reference: navy marks a
+ * decisive moment, not every page). No `border-b`: Footer is the same navy
+ * directly below, so a border would just split one dark zone into two.
  */
 export function ContactCTA() {
   const t = useTranslations("contactCta");
 
   return (
-    <Section>
+    <Section className="surface-inverse bg-background">
       <Container>
         <Reveal className="flex flex-col items-start gap-6">
           <p className="max-w-lg text-h3 font-[family-name:var(--font-display)]">

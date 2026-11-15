@@ -23,7 +23,7 @@ export function Footer() {
   );
 
   return (
-    <footer className="border-t border-border bg-background">
+    <footer className="surface-inverse border-t border-border bg-background">
       <Container className="flex flex-col gap-12 py-16 md:py-20">
         <div className="flex flex-col gap-10 md:flex-row md:justify-between">
           <div className="flex flex-col gap-2">

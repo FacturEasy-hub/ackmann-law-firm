@@ -8,8 +8,8 @@ const stepKeys = ["study", "strategy", "lead"] as const;
 
 /**
  * A real sequence (study → strategy → execution), so numbering here encodes
- * order the reader needs, unlike the icon-free SignaturePillars grid above
- * it, which lists parallel domains rather than steps.
+ * order the reader needs — unlike SignaturePillars (moved to /firm), which
+ * lists parallel domains rather than steps.
  */
 export function MethodSection() {
   const t = useTranslations("method");

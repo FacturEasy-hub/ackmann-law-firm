@@ -4,7 +4,7 @@ import { hasLocale } from "next-intl";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MotionConfig } from "framer-motion";
-import { Playfair_Display, Inter, Frank_Ruhl_Libre, Heebo } from "next/font/google";
+import { Newsreader, Inter, Frank_Ruhl_Libre, Heebo } from "next/font/google";
 import { routing } from "@/lib/i18n/routing";
 import { isRtl, siteConfig } from "@/lib/config";
 import { Header } from "@/components/layout/Header";
@@ -28,11 +28,14 @@ import "../globals.css";
 // that's actually rendering. `font-display: swap` (next/font's default)
 // prevents invisible-text blocking either way.
 
-// Latin: classic corporate serif display + neutral sans body.
-const displayLatin = Playfair_Display({
+// Latin: Newsreader (variable, optical-size axis) + neutral sans body.
+// Replaces Playfair Display — too common a "premium serif" default to read
+// as distinctive; Newsreader's single variable weight/optical-size axis
+// covers hero through body-adjacent sizes without a second display face.
+const displayLatin = Newsreader({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
 });
 const bodyLatin = Inter({
   variable: "--font-body",

@@ -21,9 +21,6 @@
     "contactHeading": "Nous contacter",
     "contactSub": "Chaque message est lu personnellement."
   },
-  "intro": {
-    "statement": "Ackmann Law Firm conseille entreprises, investisseurs et particuliers à la croisée du droit, de la finance et de la réglementation. Le cabinet allie analyse juridique et compréhension pratique des enjeux bancaires, de conformité et administratifs — pour traduire des environnements réglementaires complexes en conseils clairs et actionnables, en Israël comme à l'international."
-  },
   "method": {
     "eyebrow": "Notre méthode",
     "steps": {
@@ -77,7 +74,6 @@
   },
   "insights": {
     "eyebrow": "Analyses",
-    "viewAll": "Voir toutes les analyses",
     "empty": "De nouvelles analyses arrivent bientôt. Revenez prochainement."
   },
   "contactCta": {

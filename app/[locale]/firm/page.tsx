@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { SignaturePillars } from "@/components/sections/SignaturePillars";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { buildMetadata } from "@/lib/seo";
 
@@ -60,6 +61,8 @@ function FirmContent() {
           </p>
         </Container>
       </Section>
+
+      <SignaturePillars />
 
       <Section className="border-b border-border">
         <Container className="flex flex-col gap-12 md:gap-16">
