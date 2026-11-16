@@ -46,7 +46,7 @@ function ContactPageContent() {
 
   return (
     <>
-      <Section className="border-b border-border pb-8 pt-16 md:pt-24">
+      <Section className="pb-4 pt-6 md:pt-8">
         <Container className="flex flex-col gap-6">
           <Eyebrow>{tNav("contact")}</Eyebrow>
           <h1 className="max-w-2xl font-[family-name:var(--font-display)] text-h1">
@@ -58,7 +58,7 @@ function ContactPageContent() {
         </Container>
       </Section>
 
-      <Section>
+      <Section className="bg-surface">
         <Container className="grid gap-16 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
           <ContactDetails />
           <ContactForm />

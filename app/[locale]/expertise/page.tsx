@@ -34,7 +34,7 @@ export default async function ExpertiseIndexPage({
 
   return (
     <main>
-      <Section className="border-b border-border pb-8 pt-16 md:pt-24">
+      <Section className="pb-4 pt-6 md:pt-8">
         <Container className="flex flex-col gap-6">
           <Eyebrow>{tExpertise("eyebrow")}</Eyebrow>
           <h1 className="max-w-2xl font-[family-name:var(--font-display)] text-h1">

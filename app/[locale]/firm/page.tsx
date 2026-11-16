@@ -50,7 +50,7 @@ function FirmContent() {
 
   return (
     <>
-      <Section className="border-b border-border pb-8 pt-16 md:pt-24">
+      <Section className="pb-4 pt-6 md:pt-8">
         <Container className="flex flex-col gap-6">
           <Eyebrow>{t("eyebrow")}</Eyebrow>
           <h1 className="max-w-3xl font-[family-name:var(--font-display)] text-h1">
@@ -64,7 +64,7 @@ function FirmContent() {
 
       <SignaturePillars />
 
-      <Section className="border-b border-border">
+      <Section>
         <Container className="flex flex-col gap-12 md:gap-16">
           {blocks.map(({ titleKey, bodyKey }) => (
             <div key={titleKey} className="max-w-2xl">

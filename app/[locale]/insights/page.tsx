@@ -57,7 +57,7 @@ function InsightsIndexContent({ articles }: { articles: Article[] }) {
 
   return (
     <>
-      <Section className="border-b border-border pb-8 pt-16 md:pt-24">
+      <Section className="pb-4 pt-6 md:pt-8">
         <Container className="flex flex-col gap-6">
           <Eyebrow>{tInsights("eyebrow")}</Eyebrow>
           <h1 className="max-w-2xl font-[family-name:var(--font-display)] text-h1">
@@ -69,17 +69,17 @@ function InsightsIndexContent({ articles }: { articles: Article[] }) {
         </Container>
       </Section>
 
-      <Section>
+      <Section className="bg-surface">
         <Container>
           {articles.length === 0 ? (
             <p className="text-sm text-muted">{tInsights("empty")}</p>
           ) : (
-            <ul className="divide-y divide-border border-t border-border">
+            <ul className="flex flex-col gap-1">
               {articles.map((article) => (
                 <li key={article.slug}>
                   <Link
                     href={`/insights/${article.slug}`}
-                    className={`flex flex-col gap-2 py-6 ${focusRing}`}
+                    className={`flex flex-col gap-2 rounded-lg px-4 py-6 transition-colors hover:bg-background ${focusRing}`}
                   >
                     <span className="text-eyebrow uppercase tracking-[0.15em] text-muted">
                       {article.category} · {article.publishedAt}
