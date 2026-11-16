@@ -7,8 +7,7 @@
     "placeholder": "Écrivez votre message…",
     "send": "Envoyer",
     "typing": "…",
-    "errorMessage": "Une erreur est survenue. Merci de contacter le cabinet directement.",
-    "unconfigured": "Le chat n'est pas encore activé — contactez le cabinet directement."
+    "errorMessage": "Une erreur est survenue. Merci de contacter le cabinet directement."
   },
   "nav": {
     "firm": "Cabinet",

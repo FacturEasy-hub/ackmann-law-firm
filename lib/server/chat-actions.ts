@@ -1,10 +1,7 @@
 "use server";
 
 export type ChatMessage = { role: "user" | "assistant"; content: string };
-export type ChatResult =
-  | { status: "ok"; reply: string }
-  | { status: "unconfigured" }
-  | { status: "error" };
+export type ChatResult = { status: "ok"; reply: string } | { status: "error" };
 
 const MAX_HISTORY = 20;
 const MAX_MESSAGE_LENGTH = 500;
@@ -16,25 +13,26 @@ const SYSTEM_PROMPTS: Record<string, string> = {
 };
 
 /**
- * OpenRouter first (one key, many free `:free` models — the "spread
- * across models" ask), Groq as fallback when OpenRouter's shared free
- * quota (50 requests/day across ALL free models) is exhausted. Both free
- * tiers are small — this is a V1/demo feature, not production-grade
- * capacity; say so if traffic grows.
+ * OVHcloud AI Endpoints first (anonymous tier, EU-hosted, 2 requests/min
+ * per IP), LLM7.io as fallback (anonymous tier, ~250 requests/hour) when
+ * OVHcloud's tighter per-minute limit is hit. Both work with **no account
+ * and no API key** — the option chosen when the client only had a ChatGPT
+ * account, not an OpenRouter/Groq/OpenAI API key. Send no `Authorization`
+ * header for either: OVHcloud's anonymous tier specifically rejects any
+ * Bearer value, so there's no "optional key" fallback shape here like
+ * other free providers have. Both free tiers are smaller than OpenRouter's
+ * — this is a V1/demo feature, not production-grade capacity; say so if
+ * traffic grows.
  */
 async function callProvider(
   baseUrl: string,
-  apiKey: string,
   model: string,
   messages: { role: string; content: string }[],
 ): Promise<string | null> {
   try {
     const res = await fetch(`${baseUrl}/chat/completions`, {
       method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ model, messages, max_tokens: 300 }),
     });
     if (!res.ok) return null;
@@ -51,14 +49,6 @@ export async function sendChatMessage(
   history: ChatMessage[],
   locale: string,
 ): Promise<ChatResult> {
-  const openrouterKey = process.env.OPENROUTER_API_KEY;
-  const groqKey = process.env.GROQ_API_KEY;
-
-  if (!openrouterKey && !groqKey) {
-    console.log("[chat] no provider configured — skipping request");
-    return { status: "unconfigured" };
-  }
-
   // Trust nothing from the client beyond shape/length — same philosophy as
   // the contact form's own server-side sanitization.
   const trimmedHistory = history
@@ -71,25 +61,19 @@ export async function sendChatMessage(
   const systemPrompt = SYSTEM_PROMPTS[locale] ?? SYSTEM_PROMPTS.en;
   const messages = [{ role: "system", content: systemPrompt }, ...trimmedHistory];
 
-  if (openrouterKey) {
-    const reply = await callProvider(
-      "https://openrouter.ai/api/v1",
-      openrouterKey,
-      "nvidia/nemotron-3.5-lightning:free",
-      messages,
-    );
-    if (reply) return { status: "ok", reply };
-  }
+  const ovhReply = await callProvider(
+    "https://oai.endpoints.kepler.ai.cloud.ovh.net/v1",
+    "gpt-oss-120b",
+    messages,
+  );
+  if (ovhReply) return { status: "ok", reply: ovhReply };
 
-  if (groqKey) {
-    const reply = await callProvider(
-      "https://api.groq.com/openai/v1",
-      groqKey,
-      "openai/gpt-oss-20b",
-      messages,
-    );
-    if (reply) return { status: "ok", reply };
-  }
+  const llm7Reply = await callProvider(
+    "https://api.llm7.io/v1",
+    "gpt-oss:20b",
+    messages,
+  );
+  if (llm7Reply) return { status: "ok", reply: llm7Reply };
 
   return { status: "error" };
 }

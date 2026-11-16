@@ -7,8 +7,7 @@
     "placeholder": "Type your message…",
     "send": "Send",
     "typing": "…",
-    "errorMessage": "Something went wrong. Please contact the firm directly.",
-    "unconfigured": "Chat isn't enabled yet — please contact the firm directly."
+    "errorMessage": "Something went wrong. Please contact the firm directly."
   },
   "nav": {
     "firm": "Firm",

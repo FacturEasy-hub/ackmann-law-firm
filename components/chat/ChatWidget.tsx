@@ -26,7 +26,6 @@ export function ChatWidget() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
-  const [unconfigured, setUnconfigured] = useState(false);
   const [isPending, startTransition] = useTransition();
 
   function closeOnBackdropClick(event: MouseEvent<HTMLDialogElement>) {
@@ -59,8 +58,6 @@ export function ChatWidget() {
           ...prev,
           { role: "assistant", content: result.reply },
         ]);
-      } else if (result.status === "unconfigured") {
-        setUnconfigured(true);
       } else {
         setMessages((prev) => [
           ...prev,
@@ -106,47 +103,39 @@ export function ChatWidget() {
           <div className="flex-1 overflow-y-auto px-6 py-4">
             <p className="text-sm text-muted">{t("disclaimer")}</p>
 
-            {unconfigured ? (
-              <p className="mt-4 text-sm text-muted">{t("unconfigured")}</p>
-            ) : (
-              <div className="mt-4 flex flex-col gap-3">
-                {messages.map((message, index) => (
-                  <p
-                    key={index}
-                    className={
-                      message.role === "user"
-                        ? "self-end rounded-lg bg-surface px-4 py-2 text-sm"
-                        : "self-start text-sm text-foreground/85"
-                    }
-                  >
-                    {message.content}
-                  </p>
-                ))}
-                {isPending && (
-                  <p className="text-sm text-muted">{t("typing")}</p>
-                )}
-              </div>
-            )}
+            <div className="mt-4 flex flex-col gap-3">
+              {messages.map((message, index) => (
+                <p
+                  key={index}
+                  className={
+                    message.role === "user"
+                      ? "self-end rounded-lg bg-surface px-4 py-2 text-sm"
+                      : "self-start text-sm text-foreground/85"
+                  }
+                >
+                  {message.content}
+                </p>
+              ))}
+              {isPending && <p className="text-sm text-muted">{t("typing")}</p>}
+            </div>
           </div>
 
-          {!unconfigured && (
-            <form
-              onSubmit={handleSubmit}
-              className="flex items-center gap-3 border-t border-border px-6 py-4"
-            >
-              <input
-                type="text"
-                value={input}
-                onChange={(event) => setInput(event.target.value)}
-                placeholder={t("placeholder")}
-                maxLength={500}
-                className="flex-1 border border-border bg-surface px-4 py-2 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
-              />
-              <Button type="submit" disabled={isPending || !input.trim()}>
-                {t("send")}
-              </Button>
-            </form>
-          )}
+          <form
+            onSubmit={handleSubmit}
+            className="flex items-center gap-3 border-t border-border px-6 py-4"
+          >
+            <input
+              type="text"
+              value={input}
+              onChange={(event) => setInput(event.target.value)}
+              placeholder={t("placeholder")}
+              maxLength={500}
+              className="flex-1 border border-border bg-surface px-4 py-2 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+            />
+            <Button type="submit" disabled={isPending || !input.trim()}>
+              {t("send")}
+            </Button>
+          </form>
         </div>
       </dialog>
     </>
