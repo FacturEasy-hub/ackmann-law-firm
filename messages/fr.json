@@ -140,10 +140,12 @@
       ]
     },
     "corporate-commercial": {
+      "seoTitle": "Avocat en droit commercial en Israël | Entreprises & contrats",
+      "h1": "Droit commercial et accompagnement des entreprises",
       "intro": "Structuration de sociétés, contrats commerciaux et accompagnement juridique courant pour des entreprises opérant en Israël et à l'étranger.",
       "keyMatters": ["Constitution et gouvernance de sociétés", "Contrats commerciaux", "Pactes d'actionnaires"],
       "services": ["Conseil en structuration de sociétés", "Rédaction et révision de contrats commerciaux", "Pactes d'actionnaires et gouvernance"],
-      "approach": "Le conseil commercial reste proportionné à la taille et au stade de l'entreprise — précis là où cela compte, sans complexité inutile."
+      "approach": "Le conseil commercial reste proportionné à la taille et au stade de l'entreprise — précis là où cela compte, sans complexité inutile. Le cabinet accompagne notamment les entreprises et entrepreneurs qui ne disposent pas nécessairement d'un service juridique interne."
     },
     "compliance": {
       "seoTitle": "Compliance, FATCA & CRS en Israël",

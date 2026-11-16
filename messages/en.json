@@ -140,10 +140,12 @@
       ]
     },
     "corporate-commercial": {
+      "seoTitle": "Commercial Lawyer in Israel | Business & Contracts",
+      "h1": "Commercial Law and Business Support",
       "intro": "Corporate structuring, commercial agreements and day-to-day legal support for companies operating in Israel and abroad.",
       "keyMatters": ["Company formation and governance", "Commercial contracts", "Shareholder arrangements"],
       "services": ["Corporate structuring advice", "Commercial contract drafting and review", "Shareholder and governance agreements"],
-      "approach": "Commercial advice is kept proportionate to the size and stage of the business — precise where it matters, without unnecessary complexity."
+      "approach": "Commercial advice is kept proportionate to the size and stage of the business — precise where it matters, without unnecessary complexity. The firm notably supports businesses and entrepreneurs who do not necessarily have an in-house legal department."
     },
     "compliance": {
       "seoTitle": "Compliance, FATCA & CRS in Israel",
