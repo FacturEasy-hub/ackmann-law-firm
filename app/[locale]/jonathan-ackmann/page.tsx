@@ -52,7 +52,7 @@ export default async function JonathanPage({
       <JsonLd
         data={{
           "@context": "https://schema.org",
-          "@type": "Person",
+          "@type": "Attorney",
           name: siteConfig.founderName,
           jobTitle: tFounder("title"),
           worksFor: { "@type": "LegalService", name: siteConfig.firmName },
@@ -89,7 +89,7 @@ function JonathanContent() {
   return (
     <>
       {/* Portrait deferred with Hero/FounderSection — no approved photography yet. */}
-      <Section className="border-b border-border pb-8 pt-16 md:pt-24">
+      <Section className="pb-4 pt-6 md:pt-8">
         <Container className="flex flex-col gap-6">
           <Eyebrow>{tFounder("eyebrow")}</Eyebrow>
           <h1 className="max-w-3xl font-[family-name:var(--font-display)] text-h1">
@@ -105,7 +105,7 @@ function JonathanContent() {
         </Container>
       </Section>
 
-      <Section className="border-b border-border">
+      <Section className="bg-surface">
         <Container className="grid gap-12 md:grid-cols-2 md:gap-16">
           <div>
             <h2 className="font-[family-name:var(--font-display)] text-h3">
@@ -139,7 +139,7 @@ function JonathanContent() {
         </Container>
       </Section>
 
-      <Section className="border-b border-border">
+      <Section>
         <Container className="grid gap-12 md:grid-cols-2 md:gap-16">
           <div>
             <h2 className="font-[family-name:var(--font-display)] text-h3">
@@ -164,7 +164,7 @@ function JonathanContent() {
         </Container>
       </Section>
 
-      <Section className="border-b border-border">
+      <Section className="bg-surface">
         <Container>
           <h2 className="font-[family-name:var(--font-display)] text-h3">
             {t("practiceAreasTitle")}
