@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { TextLink } from "@/components/ui/TextLink";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { ExpertiseHero } from "@/components/sections/ExpertiseHero";
@@ -160,12 +161,15 @@ function ExpertiseDetailContent({ slug }: { slug: PracticeAreaSlug }) {
 
       {related.length > 0 && (
         <Section className="bg-surface">
-          <Container className="flex flex-wrap gap-6">
-            {related.map((relatedSlug) => (
-              <TextLink key={relatedSlug} href={`/expertise/${relatedSlug}`}>
-                {t(`items.${relatedSlug}`)}
-              </TextLink>
-            ))}
+          <Container className="flex flex-col gap-4">
+            <Eyebrow>{tDetail("relatedLabel")}</Eyebrow>
+            <div className="flex flex-wrap gap-6">
+              {related.map((relatedSlug) => (
+                <TextLink key={relatedSlug} href={`/expertise/${relatedSlug}`}>
+                  {t(`items.${relatedSlug}`)}
+                </TextLink>
+              ))}
+            </div>
           </Container>
         </Section>
       )}

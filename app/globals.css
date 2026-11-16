@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
 /*
- * Brand tokens — white/cream dominant, deep navy reserved as a deliberate
- * anchor (footer, the final CTA) rather than the default text color
- * everywhere, a restrained brass/gold accent throughout. Private-banking
- * reference (Pictet, Rothschild & Co): navy anchors, it doesn't blanket.
+ * Brand tokens — resampled from the new logo lockup (deep forest-green
+ * wordmark, weathered bronze/verdigris ribbon monogram, warm greige
+ * backdrop) instead of the prior terracotta/cream direction. Same role
+ * names as before (`--brand-navy` has never been navy since the first
+ * rename — it's the "dark anchor" role, not a color name), only values
+ * change, so every component already built on these tokens picks up the
+ * new palette with no per-component edits.
  */
 :root {
   /* ContactForm's error summary (components/forms/ContactForm.tsx) links to
@@ -14,34 +17,57 @@
      that preference set. */
   scroll-behavior: smooth;
 
-  --background: #ffffff;
-  --foreground: #121a1d; /* near-black ink — body text, not the brand navy */
-  --surface: #f3f4f6; /* cool light grey — alternating panels, input fills */
-  --muted: #5b6472; /* slate grey — clears 4.5:1 AA text contrast on --background */
-  --border: #dbdfe4;
-  --accent: #b3976c; /* brass/gold — sampled from the firm logo */
-  --accent-soft: #f3efe8;
-  --brand-navy: #031427; /* sampled from the firm logo — anchor moments only */
+  --background: #f4f0e8; /* warm ivory, lighter than the logo's own backdrop */
+  --foreground: #1e4639; /* deep forest green — sampled from the wordmark */
+  --surface: #e3dcce; /* warm greige — closer to the logo's backdrop, alternating panels */
+  --muted: #5e6b61; /* muted sage-grey — clears ~5:1 AA text contrast on --background */
+  --border: #d6cdbb;
+  --accent: #7a5f3b; /* aged bronze — sampled from the monogram's metal, clears ~5.3:1 AA */
+  --accent-soft: #ede3d1;
+  --brand-navy: #152e25; /* darker forest pine — anchor moments only */
 
   --font-sans: var(--font-body);
   --font-serif: var(--font-display);
 }
 
 /*
- * The one deliberate dark anchor (footer, final CTA) — navy background,
- * with --foreground/--muted/--border/--background flipped to their light
- * counterparts so every component already built on those tokens (buttons,
- * links, dividers, focus rings) renders correctly with no extra classes.
+ * The one deliberate dark anchor (footer, final CTA) — dark pine
+ * background, with --foreground/--muted/--border/--background flipped to
+ * their light counterparts so every component already built on those
+ * tokens (buttons, links, dividers, focus rings) renders correctly with
+ * no extra classes.
  */
 .surface-inverse {
   --background: var(--brand-navy);
-  --foreground: #f4f1e9;
-  --muted: #a7b0bd;
-  --border: #1c2b3d;
+  --foreground: #ede6d8;
+  --muted: #a8a08e;
+  --border: #2a4a3c;
+  /* Base --accent only clears ~2.3:1 against this dark background —
+     brighten it here so accent text/labels stay AA-safe without a
+     per-component override. */
+  --accent: #c9a668;
+  --accent-soft: rgba(201, 166, 104, 0.15);
   /* `color` is inherited, not re-evaluated per element — without this,
      any text here with no explicit text-* class keeps inheriting body's
      stale dark-ink color instead of this scope's light --foreground. */
   color: var(--foreground);
+}
+
+/*
+ * The site's one recurring "hand-framed" corner — two soft rounded
+ * corners, two sharp, instead of a uniform radius everywhere. Reused on
+ * Hero's image, FounderSection's portrait, and PracticeList's preview
+ * panel (ui-ux-pro-max's "Nature Distilled" style: organic/varied radius,
+ * soft natural shadow, no hard ruled borders on elevated surfaces).
+ */
+.radius-organic {
+  border-radius: 3rem 1rem 3rem 1rem;
+}
+
+@media (max-width: 640px) {
+  .radius-organic {
+    border-radius: 1.5rem 0.75rem 1.5rem 0.75rem;
+  }
 }
 
 @theme inline {
@@ -60,18 +86,21 @@
    * Fluid editorial type scale (SPEC.md Section 3.2) — one source of truth,
    * used via `text-display`/`text-h1`/etc utilities instead of per-component
    * breakpoint jumps. clamp() ranges span ~375px to ~1440px viewports.
+   * Cut ~20-25% off every max size — once Section/Hero padding got tight,
+   * the old scale (display up to 88px, h1 up to 56px) read as oversized
+   * for how little room surrounded it.
    */
-  --text-display: clamp(2.75rem, 2rem + 3.5vw, 5.5rem);
-  --text-display--line-height: 1.05;
-  --text-h1: clamp(2.25rem, 1.8rem + 2vw, 3.5rem);
-  --text-h1--line-height: 1.1;
-  --text-h2: clamp(1.75rem, 1.5rem + 1.2vw, 2.5rem);
-  --text-h2--line-height: 1.15;
-  --text-h3: clamp(1.375rem, 1.25rem + 0.6vw, 1.75rem);
-  --text-h3--line-height: 1.25;
-  --text-h4: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
-  --text-h4--line-height: 1.3;
-  --text-body-lg: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --text-display: clamp(2.25rem, 1.75rem + 2.5vw, 4.25rem);
+  --text-display--line-height: 1.08;
+  --text-h1: clamp(1.875rem, 1.6rem + 1.4vw, 2.75rem);
+  --text-h1--line-height: 1.15;
+  --text-h2: clamp(1.5rem, 1.35rem + 0.9vw, 2rem);
+  --text-h2--line-height: 1.2;
+  --text-h3: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --text-h3--line-height: 1.3;
+  --text-h4: clamp(1.0625rem, 1rem + 0.25vw, 1.125rem);
+  --text-h4--line-height: 1.35;
+  --text-body-lg: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
   --text-body-lg--line-height: 1.6;
   --text-eyebrow: 0.75rem;
   --text-eyebrow--line-height: 1.4;
