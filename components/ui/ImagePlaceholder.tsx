@@ -7,7 +7,12 @@ type ImagePlaceholderProps = ComponentPropsWithoutRef<"div"> & {
   /** Generic stand-in photo while real photography is pending — swap for
    * the final shot by changing this prop only; surrounding layout and the
    * no-`src` "pending" gradient (still used where no stand-in exists yet,
-   * e.g. the founder portrait) don't need to change. */
+   * e.g. the founder portrait) don't need to change.
+   *
+   * `/brand/placeholder-jerusalem.jpg` (used in Hero/PracticeList): cropped
+   * from "2013-Jerusalem-View from Armon Hanatziv.jpg", Wikimedia Commons,
+   * CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:2013-Jerusalem-View_from_Armon_Hanatziv.jpg.
+   * Replace (and drop this note) once real photography lands. */
   src?: string;
 };
 
