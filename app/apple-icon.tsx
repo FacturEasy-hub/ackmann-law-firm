@@ -14,7 +14,7 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#031427",
+          backgroundColor: "#152e25",
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element -- next/og's ImageResponse renders via satori, not the DOM; next/image isn't usable here. */}

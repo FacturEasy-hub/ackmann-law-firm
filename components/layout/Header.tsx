@@ -20,7 +20,7 @@ export function Header() {
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <header className="sticky top-0 z-50 bg-background shadow-[0_8px_24px_-20px_rgba(43,27,18,0.5)]">
+    <header className="sticky top-0 z-50 bg-background shadow-[0_8px_24px_-20px_rgba(21,46,37,0.5)]">
       <Container className="flex h-16 items-center justify-between lg:h-20">
         {/* JA monogram, used sparingly. */}
         <motion.span

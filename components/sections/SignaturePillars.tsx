@@ -13,7 +13,7 @@ export function SignaturePillars() {
   const t = useTranslations("pillars");
 
   return (
-    <Section className="border-b border-border">
+    <Section className="bg-surface">
       <Container>
         <Reveal className="grid gap-12 md:grid-cols-3 md:gap-8">
           {pillarKeys.map((key) => (

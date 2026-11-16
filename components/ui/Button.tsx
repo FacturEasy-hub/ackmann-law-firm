@@ -19,12 +19,12 @@ type NativeButtonProps = CommonProps & {
 type ButtonProps = LinkButtonProps | NativeButtonProps;
 
 const base =
-  "inline-flex items-center justify-center rounded-sm border px-6 py-3 text-sm font-medium tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground";
+  "inline-flex items-center justify-center rounded-md border px-6 py-3 text-sm font-medium tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground";
 
-// Primary filled navy, secondary outline. No pills, no shadows.
+// Primary filled terracotta, secondary ink outline. Soft corners (not a
+// pill — warm/boutique, not cinematic), no shadows.
 const variants: Record<Variant, string> = {
-  primary:
-    "border-foreground bg-foreground text-background hover:bg-foreground/90",
+  primary: "border-accent bg-accent text-background hover:bg-accent/90",
   secondary: "border-foreground text-foreground hover:bg-foreground/5",
 };
 

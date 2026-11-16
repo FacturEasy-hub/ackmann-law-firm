@@ -28,7 +28,7 @@ export function Hero() {
   return (
     <section className="relative pt-4 md:pt-6">
       <Container>
-        <div className="radius-organic relative h-[48vh] min-h-[340px] max-h-[500px] overflow-hidden shadow-[0_24px_60px_-24px_rgba(43,27,18,0.35)] md:h-[52vh] md:max-h-[560px]">
+        <div className="radius-organic relative h-[48vh] min-h-[340px] max-h-[500px] overflow-hidden shadow-[0_24px_60px_-24px_rgba(21,46,37,0.35)] md:h-[52vh] md:max-h-[560px]">
           <ImagePlaceholder
             label="Jerusalem — photography pending"
             className="absolute inset-0"
@@ -58,7 +58,7 @@ export function Hero() {
       </Container>
 
       <Container>
-        <div className="relative z-10 -mt-8 flex max-w-xl flex-wrap items-center gap-4 rounded-xl bg-background px-6 py-4 shadow-[0_16px_40px_-16px_rgba(43,27,18,0.25)] md:-mt-10">
+        <div className="relative z-10 -mt-8 flex max-w-xl flex-wrap items-center gap-4 rounded-xl bg-background px-6 py-4 shadow-[0_16px_40px_-16px_rgba(21,46,37,0.25)] md:-mt-10">
           <p className="text-sm text-muted">{t("contactSub")}</p>
           <ContactDialog />
         </div>

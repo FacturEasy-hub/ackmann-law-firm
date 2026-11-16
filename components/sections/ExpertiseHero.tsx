@@ -34,7 +34,7 @@ export function ExpertiseHero({
   ];
 
   return (
-    <Section className="border-b border-border pb-8 pt-16 md:pt-24">
+    <Section className="pb-4 pt-6 md:pt-8">
       <JsonLd data={breadcrumbJsonLd(breadcrumbItems, locale)} />
       <ViewTracker event={ANALYTICS_EVENTS.expertiseView} slug={slug} />
       <Container className="flex flex-col gap-6">

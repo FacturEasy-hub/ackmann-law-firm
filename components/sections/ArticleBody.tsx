@@ -12,7 +12,7 @@ export function ArticleBody({ body }: { body: string }) {
   const paragraphs = body.split("\n\n").filter(Boolean);
 
   return (
-    <Section className="border-b border-border">
+    <Section>
       <Container>
         <Reveal className="mx-auto flex max-w-[760px] flex-col gap-6">
           {paragraphs.map((paragraph) => (

@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
 import { Container } from "@/components/ui/Container";
@@ -5,6 +9,7 @@ import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { TextLink } from "@/components/ui/TextLink";
 import { Reveal } from "@/components/motion/Reveal";
+import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { practiceAreaSlugs } from "@/lib/practice-areas";
 
 const focusRing =
@@ -12,10 +17,11 @@ const focusRing =
 
 /**
  * SPEC.md Section 13/5.4 — editorial list, not icon cards. Rows have no
- * arrow glyph on purpose: a "→" would need to flip for RTL, so hover
- * affordance is an underline instead. Hover color intentionally stays
- * `foreground`, not `accent` — accent only clears ~3.8:1 against the
- * background, under the 4.5:1 AA floor for this text size (Phase 3.1).
+ * arrow glyph on purpose: a "→" would need to flip for RTL. No `border-b`
+ * or `divide-y` ruled lines — the warm/organic direction separates rows
+ * with a soft hover tint (`hover:bg-surface`) instead, and pairs the list
+ * with a `radius-organic` preview panel (lg+) that cross-fades to
+ * whichever row is hovered/focused.
  */
 export function PracticeList({
   showHeader = true,
@@ -26,9 +32,10 @@ export function PracticeList({
   showHeader?: boolean;
 }) {
   const t = useTranslations("expertise");
+  const [active, setActive] = useState<string | null>(null);
 
   return (
-    <Section className="border-b border-border">
+    <Section>
       <Container className="flex flex-col gap-8">
         {showHeader && (
           <div className="flex items-baseline justify-between gap-4">
@@ -36,19 +43,46 @@ export function PracticeList({
             <TextLink href="/expertise">{t("viewAll")}</TextLink>
           </div>
         )}
-        <Reveal>
-          <ul className="divide-y divide-border border-t border-border">
+        <Reveal className="grid gap-10 lg:grid-cols-[1fr_320px] lg:items-start">
+          <ul className="flex flex-col gap-1">
             {practiceAreaSlugs.map((slug) => (
               <li key={slug}>
                 <Link
                   href={`/expertise/${slug}`}
-                  className={`block py-6 text-h4 font-[family-name:var(--font-display)] underline decoration-transparent underline-offset-4 transition-colors hover:decoration-foreground ${focusRing}`}
+                  onMouseEnter={() => setActive(slug)}
+                  onMouseLeave={() => setActive(null)}
+                  onFocus={() => setActive(slug)}
+                  onBlur={() => setActive(null)}
+                  className={`block rounded-lg px-4 py-5 text-h4 font-[family-name:var(--font-display)] transition-colors hover:bg-surface ${focusRing}`}
                 >
                   {t(`items.${slug}`)}
                 </Link>
               </li>
             ))}
           </ul>
+
+          <div className="radius-organic sticky top-24 hidden aspect-[4/5] overflow-hidden shadow-[0_24px_60px_-24px_rgba(21,46,37,0.3)] lg:block">
+            <AnimatePresence mode="wait">
+              {active && (
+                <motion.div
+                  key={active}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                  className="absolute inset-0"
+                >
+                  <ImagePlaceholder
+                    label={t(`items.${active}`)}
+                    className="h-full"
+                  />
+                </motion.div>
+              )}
+            </AnimatePresence>
+            {!active && (
+              <div className="h-full w-full bg-surface" aria-hidden="true" />
+            )}
+          </div>
         </Reveal>
       </Container>
     </Section>

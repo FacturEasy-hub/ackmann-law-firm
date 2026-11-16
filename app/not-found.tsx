@@ -26,7 +26,7 @@ export default function RootNotFound() {
           gap: "1.5rem",
           padding: "4rem 1.5rem",
           backgroundColor: "#ffffff",
-          color: "#031427",
+          color: "#152e25",
           fontFamily: "Georgia, 'Times New Roman', serif",
         }}
       >
@@ -34,7 +34,7 @@ export default function RootNotFound() {
           style={{
             fontSize: "0.75rem",
             letterSpacing: "0.2em",
-            color: "#5b6472",
+            color: "#5e6b61",
             textTransform: "uppercase",
           }}
         >
@@ -47,8 +47,8 @@ export default function RootNotFound() {
         <Link
           href="/"
           style={{
-            border: "1px solid #031427",
-            backgroundColor: "#031427",
+            border: "1px solid #152e25",
+            backgroundColor: "#152e25",
             color: "#ffffff",
             padding: "0.75rem 1.5rem",
             fontFamily: "system-ui, sans-serif",
