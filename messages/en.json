@@ -59,7 +59,6 @@
     "viewAll": "View all expertise",
     "items": {
       "banking-finance": "Banking & Finance",
-      "financial-regulation": "Financial Regulation",
       "corporate-commercial": "Corporate & Commercial",
       "compliance": "Compliance",
       "administrative-public-law": "Administrative & Public Law",
@@ -137,12 +136,6 @@
         { "question": "How do I file a complaint with the Bank of Israel?", "answer": "First send a complaint (פניות הציבור) to the bank itself, then, if the response is unsatisfactory, escalate to the relevant Bank of Israel department with a documented file." },
         { "question": "What is the נתוני אשראי credit-data system?", "answer": "It is Israel's credit-data system, which can contain errors affecting your access to credit. You can review your report and request a correction if you find an error." }
       ]
-    },
-    "financial-regulation": {
-      "intro": "Guidance through Israel's financial regulatory framework, including compliance obligations facing banks, credit providers and regulated financial institutions.",
-      "keyMatters": ["Regulatory compliance programs", "Credit data and reporting obligations", "Interactions with financial regulators"],
-      "services": ["Regulatory compliance review", "Credit Data Law guidance", "Representation before financial regulators"],
-      "approach": "Regulatory questions are addressed with an understanding of both the legal text and how supervisory bodies apply it in practice."
     },
     "corporate-commercial": {
       "intro": "Corporate structuring, commercial agreements and day-to-day legal support for companies operating in Israel and abroad.",

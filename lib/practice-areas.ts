@@ -13,7 +13,6 @@
  */
 export const practiceAreaSlugs = [
   "banking-finance",
-  "financial-regulation",
   "corporate-commercial",
   "compliance",
   "administrative-public-law",

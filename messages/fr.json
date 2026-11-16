@@ -59,7 +59,6 @@
     "viewAll": "Voir toute l'expertise",
     "items": {
       "banking-finance": "Banque & Finance",
-      "financial-regulation": "Réglementation financière",
       "corporate-commercial": "Droit des sociétés & commercial",
       "compliance": "Conformité",
       "administrative-public-law": "Droit administratif & public",
@@ -137,12 +136,6 @@
         { "question": "Comment déposer une plainte auprès de la Banque d'Israël ?", "answer": "Il faut d'abord adresser une réclamation (פניות הציבור) à la banque elle-même, puis, si la réponse est insatisfaisante, saisir le service compétent de la Banque d'Israël avec un dossier documenté." },
         { "question": "Qu'est-ce que le système נתוני אשראי ?", "answer": "C'est le système israélien de données de crédit, qui peut contenir des erreurs affectant votre accès au crédit. Il est possible de consulter son rapport et de demander une correction en cas d'erreur." }
       ]
-    },
-    "financial-regulation": {
-      "intro": "Accompagnement dans le cadre réglementaire financier israélien, y compris les obligations de conformité des banques, prêteurs et institutions financières régulées.",
-      "keyMatters": ["Programmes de conformité réglementaire", "Obligations de données de crédit et de reporting", "Relations avec les régulateurs financiers"],
-      "services": ["Revue de conformité réglementaire", "Conseil sur la loi relative aux données de crédit", "Représentation devant les régulateurs financiers"],
-      "approach": "Les questions réglementaires sont traitées avec une compréhension à la fois du texte juridique et de son application concrète par les autorités de supervision."
     },
     "corporate-commercial": {
       "intro": "Structuration de sociétés, contrats commerciaux et accompagnement juridique courant pour des entreprises opérant en Israël et à l'étranger.",

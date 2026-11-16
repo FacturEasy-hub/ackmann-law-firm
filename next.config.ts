@@ -31,6 +31,18 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+
+  // Financial Regulation merged into Banking & Finance (cahier des charges
+  // Section 13's preferred option) — 301 in case the old URL was indexed.
+  async redirects() {
+    return [
+      {
+        source: "/:locale/expertise/financial-regulation",
+        destination: "/:locale/expertise/banking-finance",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);
