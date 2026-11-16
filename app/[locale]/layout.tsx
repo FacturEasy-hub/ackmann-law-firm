@@ -9,6 +9,7 @@ import { routing } from "@/lib/i18n/routing";
 import { isRtl, siteConfig } from "@/lib/config";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ChatWidget } from "@/components/chat/ChatWidget";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import "../globals.css";
@@ -133,6 +134,7 @@ export default async function LocaleLayout({
             <Header />
             {children}
             <Footer />
+            <ChatWidget />
           </MotionConfig>
         </NextIntlClientProvider>
         <GoogleAnalytics />

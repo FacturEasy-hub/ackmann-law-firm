@@ -1,4 +1,15 @@
 {
+  "chat": {
+    "openLabel": "Open chat",
+    "closeLabel": "Close chat",
+    "heading": "Got a question?",
+    "disclaimer": "Automated welcome assistant — for advice on your matter, use the contact form instead.",
+    "placeholder": "Type your message…",
+    "send": "Send",
+    "typing": "…",
+    "errorMessage": "Something went wrong. Please contact the firm directly.",
+    "unconfigured": "Chat isn't enabled yet — please contact the firm directly."
+  },
   "nav": {
     "firm": "Firm",
     "expertise": "Expertise",
