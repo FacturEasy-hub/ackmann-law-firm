@@ -37,7 +37,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
 
     for (const article of getArticles(locale)) {
-      entries.push({ url: `${base}/${locale}/insights/${article.slug}` });
+      entries.push({
+        url: `${base}/${locale}/insights/${article.slug}`,
+        lastModified: new Date(article.updatedAt ?? article.publishedAt),
+      });
     }
   }
 

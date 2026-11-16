@@ -27,7 +27,9 @@ const articlesByLocale: Record<string, Article[]> = {
 };
 
 export function getArticles(locale: string): Article[] {
-  return articlesByLocale[locale] ?? [];
+  return [...(articlesByLocale[locale] ?? [])].sort(
+    (a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt),
+  );
 }
 
 export function getArticleBySlug(
