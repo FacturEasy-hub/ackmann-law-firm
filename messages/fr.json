@@ -144,10 +144,12 @@
       "approach": "Le conseil commercial reste proportionné à la taille et au stade de l'entreprise — précis là où cela compte, sans complexité inutile."
     },
     "compliance": {
-      "intro": "Dispositifs de conformité pour des entreprises confrontées à des exigences réglementaires, bancaires et administratives, conçus pour être applicables en pratique, pas seulement sur le papier.",
-      "keyMatters": ["Conformité anti-blanchiment et criminalité financière", "Reporting CRS et FATCA", "Politiques internes de conformité"],
-      "services": ["Conception de programmes de conformité", "Conseil AML/CRS/FATCA", "Formation et accompagnement interne à la conformité"],
-      "approach": "Le conseil en conformité part du fonctionnement réel de l'entreprise, pour intégrer les exigences aux processus existants plutôt que d'en faire une charge séparée."
+      "seoTitle": "Compliance, FATCA & CRS en Israël",
+      "h1": "Conformité réglementaire, FATCA et CRS en Israël",
+      "intro": "Conformité FATCA, QI et CRS pour des entreprises et institutions financières, fondée sur une expérience pratique de la revue documentaire et des contrôles réglementaires.",
+      "keyMatters": ["FATCA, QI et revue documentaire", "Contrôles sur populations de comptes américains", "Vérification de formulaires W-8/W-9", "Reporting CRS et obligations déclaratives"],
+      "services": ["Conception de programmes de conformité FATCA/QI", "Revue et classification documentaire", "Contrôles par échantillonnage", "Formation et accompagnement interne à la conformité"],
+      "approach": "Le conseil en conformité part du fonctionnement réel de l'entreprise, pour intégrer les exigences FATCA, QI et CRS aux processus existants plutôt que d'en faire une charge séparée."
     },
     "administrative-public-law": {
       "intro": "Accompagnement juridique sur les marchés publics, appels d'offres et procédures administratives impliquant des organismes publics israéliens.",

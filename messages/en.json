@@ -144,10 +144,12 @@
       "approach": "Commercial advice is kept proportionate to the size and stage of the business — precise where it matters, without unnecessary complexity."
     },
     "compliance": {
-      "intro": "Compliance frameworks for businesses navigating regulatory, banking and public-sector requirements, built to be workable in practice, not just on paper.",
-      "keyMatters": ["AML and financial crime compliance", "CRS and FATCA reporting", "Internal compliance policies"],
-      "services": ["Compliance program design", "AML/CRS/FATCA advisory", "Compliance training and internal guidance"],
-      "approach": "Compliance advice starts from how a business actually operates, so requirements are integrated into existing processes rather than added as a separate burden."
+      "seoTitle": "Compliance, FATCA & CRS in Israel",
+      "h1": "Regulatory Compliance, FATCA and CRS in Israel",
+      "intro": "FATCA, QI and CRS compliance for businesses and financial institutions, grounded in hands-on experience with documentary review and regulatory controls.",
+      "keyMatters": ["FATCA, QI and documentary review", "Sampling controls on US account populations", "W-8/W-9 form verification", "CRS reporting and disclosure obligations"],
+      "services": ["FATCA/QI compliance program design", "Documentary review and classification", "Sampling-based controls", "Compliance training and internal guidance"],
+      "approach": "Compliance advice starts from how a business actually operates, so FATCA, QI and CRS requirements are integrated into existing processes rather than added as a separate burden."
     },
     "administrative-public-law": {
       "intro": "Legal support on public procurement, tenders and administrative processes involving Israeli public-sector bodies.",
