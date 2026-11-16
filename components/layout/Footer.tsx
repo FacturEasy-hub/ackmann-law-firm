@@ -23,16 +23,16 @@ export function Footer() {
   );
 
   return (
-    <footer className="surface-inverse border-t border-border bg-background">
+    <footer className="surface-inverse bg-background shadow-[0_-16px_40px_-24px_rgba(0,0,0,0.4)]">
       <Container className="flex flex-col gap-12 py-16 md:py-20">
         <div className="flex flex-col gap-10 md:flex-row md:justify-between">
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-3">
               <Image
-                src="/brand/ja-monogram.webp"
+                src="/brand/ackmann-monogram.webp"
                 alt=""
-                width={265}
-                height={215}
+                width={512}
+                height={512}
                 className="h-8 w-8 rounded-sm object-cover"
               />
               <p className="font-[family-name:var(--font-display)] text-lg">

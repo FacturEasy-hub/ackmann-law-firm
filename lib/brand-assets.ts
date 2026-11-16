@@ -8,5 +8,5 @@ import { join } from "node:path";
  * decode webp raster images.
  */
 export const monogramDataUri = `data:image/png;base64,${readFileSync(
-  join(process.cwd(), "public/brand/ja-monogram.png"),
+  join(process.cwd(), "public/brand/ackmann-monogram.png"),
 ).toString("base64")}`;

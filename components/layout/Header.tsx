@@ -20,7 +20,7 @@ export function Header() {
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background">
+    <header className="sticky top-0 z-50 bg-background shadow-[0_8px_24px_-20px_rgba(43,27,18,0.5)]">
       <Container className="flex h-16 items-center justify-between lg:h-20">
         {/* JA monogram, used sparingly. */}
         <motion.span
@@ -35,10 +35,10 @@ export function Header() {
             className={`flex h-10 w-10 items-center justify-center overflow-hidden rounded-sm ${focusRing}`}
           >
             <Image
-              src="/brand/ja-monogram.webp"
+              src="/brand/ackmann-monogram.webp"
               alt=""
-              width={265}
-              height={215}
+              width={512}
+              height={512}
               priority
               className="h-full w-full object-cover"
             />
@@ -54,10 +54,10 @@ export function Header() {
                 key={item.key}
                 href={item.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`border-b-2 pb-1 text-sm transition-colors ${focusRing} ${
+                className={`relative pb-2 text-sm transition-colors after:absolute after:inset-x-0 after:-bottom-px after:h-[3px] after:origin-center after:bg-accent after:transition-transform after:duration-300 ${focusRing} ${
                   isActive
-                    ? "border-accent text-foreground"
-                    : "border-transparent text-foreground/80 hover:text-foreground"
+                    ? "text-foreground after:scale-x-100"
+                    : "text-foreground/80 after:scale-x-0 hover:text-foreground hover:after:scale-x-100"
                 }`}
               >
                 {t(item.key)}
