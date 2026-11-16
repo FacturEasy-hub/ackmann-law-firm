@@ -14,12 +14,14 @@
     "rights": "כל הזכויות שמורות."
   },
   "hero": {
+    "location": "ירושלים, ישראל",
     "title": "ACKMANN LAW FIRM",
     "positioning": "ייעוץ משפטי עצמאי לעולם העסקים, הפיננסים והרגולציה.",
     "ctaPrimary": "להכיר את המשרד",
     "ctaSecondary": "צור קשר",
     "contactHeading": "לפנות אלינו",
-    "contactSub": "כל פנייה נקראת באופן אישי."
+    "contactSub": "כל פנייה נקראת באופן אישי.",
+    "closeDialog": "סגור"
   },
   "method": {
     "eyebrow": "השיטה שלנו",

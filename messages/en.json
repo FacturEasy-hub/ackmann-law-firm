@@ -14,12 +14,14 @@
     "rights": "All rights reserved."
   },
   "hero": {
+    "location": "Jerusalem, Israel",
     "title": "ACKMANN LAW FIRM",
     "positioning": "Independent legal counsel for business, finance and regulation.",
     "ctaPrimary": "Explore the firm",
     "ctaSecondary": "Contact",
     "contactHeading": "Get in touch",
-    "contactSub": "Every message is read personally."
+    "contactSub": "Every message is read personally.",
+    "closeDialog": "Close"
   },
   "method": {
     "eyebrow": "Our approach",
