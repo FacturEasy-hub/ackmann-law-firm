@@ -33,7 +33,11 @@ async function callProvider(
     const res = await fetch(`${baseUrl}/chat/completions`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ model, messages, max_tokens: 300 }),
+      // 500, not 300: both OVHcloud and LLM7.io's free models are reasoning
+      // models that spend tokens thinking before the visible reply — a
+      // live test came back empty at 300 once the system prompt (longer
+      // in fr/he) pushed reasoning past the cap.
+      body: JSON.stringify({ model, messages, max_tokens: 500 }),
     });
     if (!res.ok) return null;
     const data = (await res.json()) as {
