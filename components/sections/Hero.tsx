@@ -39,6 +39,9 @@ export function Hero() {
             <h1 className="mt-4 max-w-2xl font-[family-name:var(--font-display)] text-display">
               {t("title")}
             </h1>
+            <p className="mt-3 text-eyebrow uppercase tracking-[0.1em] text-accent">
+              {t("tagline")}
+            </p>
             <p className="mt-4 max-w-xl text-body-lg text-foreground/85">
               {t("positioning")}
             </p>

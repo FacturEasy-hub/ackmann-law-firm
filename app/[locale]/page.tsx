@@ -6,6 +6,7 @@ import { PracticeList } from "@/components/sections/PracticeList";
 import { FounderSection } from "@/components/sections/FounderSection";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { buildMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/config";
 
 export async function generateMetadata({
   params,
@@ -17,7 +18,7 @@ export async function generateMetadata({
   return buildMetadata({
     locale,
     path: "",
-    title: t("title"),
+    title: `${t("seoTitle")} | ${siteConfig.firmName}`,
     description: t("positioning"),
   });
 }
