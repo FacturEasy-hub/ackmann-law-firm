@@ -20,7 +20,7 @@ export function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <section className="py-10 md:py-16">
+    <section className="bg-surface py-10 md:py-16">
       <Container className="grid items-center gap-10 md:grid-cols-[1.1fr_1fr] md:gap-16">
         <div className="order-last flex flex-col items-start gap-6 md:order-first">
           <Eyebrow>{t("location")}</Eyebrow>
@@ -47,7 +47,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="radius-organic relative aspect-[4/5] overflow-hidden shadow-[0_24px_60px_-24px_rgba(21,46,37,0.35)] md:aspect-[3/4]">
+        <div className="radius-organic relative aspect-[4/5] overflow-hidden shadow-[0_8px_16px_-4px_rgba(21,46,37,0.3),0_40px_80px_-20px_rgba(21,46,37,0.5)] ring-1 ring-accent/25 md:aspect-[3/4]">
           <ImagePlaceholder
             label="Jerusalem — photography pending"
             className="absolute inset-0"
