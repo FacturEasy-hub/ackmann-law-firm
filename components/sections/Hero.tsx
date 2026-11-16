@@ -6,61 +6,52 @@ import { ContactDialog } from "@/components/forms/ContactDialog";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 
 /**
- * "Framed, not full-bleed" direction: the photo sits inset inside the
- * page's own cream margin, like a print hung on a wall, rather than
- * running edge-to-edge — that full-bleed "plein cadre" treatment read as
- * cold-corporate-slab when boxed, and as cinematic-agency when the client
- * reviewed the capstan.fr-style full-viewport pass (both rejected). The
- * asymmetric organic corner radius (`--radius-organic`, see globals.css —
- * two soft rounded corners, two sharp) is reused on FounderSection's
- * portrait and PracticeList's preview panel as the site's one recurring
- * "hand-framed" motif, echoing the warm/organic style direction (soft
- * natural shadow, no hard ruled borders on elevated surfaces).
- *
- * `surface-inverse` flips Eyebrow/Button/text tokens to light-on-espresso
- * with no per-component overrides (see app/globals.css). The contact form
- * itself stays one tap away (ContactDialog) rather than sitting open in
- * the hero — client wants the first screen uncluttered.
+ * Split layout — the format actually changes here, not just color: text
+ * now sits on the page's own plain background in its own column, instead
+ * of overlaid on a dark gradient across the photo. That overlay-band
+ * pattern survived three palette changes unchanged in shape; this is the
+ * first real structural break from it. Echoes the new logo's own
+ * composition (icon on one side, wordmark/tagline calmly spaced on the
+ * other, generous room around both) rather than text stacked on imagery.
+ * The organic corner radius stays on the photo frame — the one motif kept
+ * from the prior direction, shared with FounderSection/PracticeList.
  */
 export function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative pt-4 md:pt-6">
-      <Container>
-        <div className="radius-organic relative h-[48vh] min-h-[340px] max-h-[500px] overflow-hidden shadow-[0_24px_60px_-24px_rgba(21,46,37,0.35)] md:h-[52vh] md:max-h-[560px]">
+    <section className="py-10 md:py-16">
+      <Container className="grid items-center gap-10 md:grid-cols-[1.1fr_1fr] md:gap-16">
+        <div className="order-last flex flex-col items-start gap-6 md:order-first">
+          <Eyebrow>{t("location")}</Eyebrow>
+          <h1 className="font-[family-name:var(--font-display)] text-display">
+            {t("title")}
+          </h1>
+          <p className="text-eyebrow uppercase tracking-[0.1em] text-accent">
+            {t("tagline")}
+          </p>
+          <p className="max-w-xl text-body-lg text-foreground/85">
+            {t("positioning")}
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <Button href="/firm" variant="primary">
+              {t("ctaPrimary")}
+            </Button>
+            <Button href="/contact" variant="secondary">
+              {t("ctaSecondary")}
+            </Button>
+          </div>
+          <div className="mt-2 flex flex-wrap items-center gap-4 border-t border-border pt-6">
+            <p className="text-sm text-muted">{t("contactSub")}</p>
+            <ContactDialog />
+          </div>
+        </div>
+
+        <div className="radius-organic relative aspect-[4/5] overflow-hidden shadow-[0_24px_60px_-24px_rgba(21,46,37,0.35)] md:aspect-[3/4]">
           <ImagePlaceholder
             label="Jerusalem — photography pending"
             className="absolute inset-0"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/45 to-brand-navy/10" />
-          <div className="surface-inverse relative flex h-full flex-col justify-end px-6 pb-8 pt-10 md:px-10 md:pb-8">
-            <Eyebrow>{t("location")}</Eyebrow>
-            <h1 className="mt-4 max-w-2xl font-[family-name:var(--font-display)] text-display">
-              {t("title")}
-            </h1>
-            <p className="mt-3 text-eyebrow uppercase tracking-[0.1em] text-accent">
-              {t("tagline")}
-            </p>
-            <p className="mt-4 max-w-xl text-body-lg text-foreground/85">
-              {t("positioning")}
-            </p>
-            <div className="mt-6 flex gap-4">
-              <Button href="/firm" variant="primary">
-                {t("ctaPrimary")}
-              </Button>
-              <Button href="/contact" variant="secondary">
-                {t("ctaSecondary")}
-              </Button>
-            </div>
-          </div>
-        </div>
-      </Container>
-
-      <Container>
-        <div className="relative z-10 -mt-8 flex max-w-xl flex-wrap items-center gap-4 rounded-xl bg-background px-6 py-4 shadow-[0_16px_40px_-16px_rgba(21,46,37,0.25)] md:-mt-10">
-          <p className="text-sm text-muted">{t("contactSub")}</p>
-          <ContactDialog />
         </div>
       </Container>
     </section>

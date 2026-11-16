@@ -9,6 +9,7 @@ import { Container } from "@/components/ui/Container";
 import { LanguageSwitcher } from "@/components/navigation/LanguageSwitcher";
 import { MobileMenu } from "@/components/navigation/MobileMenu";
 import { navItems } from "@/lib/nav-items";
+import { siteConfig } from "@/lib/config";
 
 const focusRing =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground";
@@ -21,27 +22,36 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-background shadow-[0_8px_24px_-20px_rgba(21,46,37,0.5)]">
-      <Container className="flex h-16 items-center justify-between lg:h-20">
-        {/* JA monogram, used sparingly. */}
+      <Container className="flex h-20 items-center justify-between lg:h-24">
         <motion.span
           className="inline-block"
-          whileHover={{ scale: 1.06 }}
-          whileTap={{ scale: 0.96 }}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
           transition={{ duration: 0.2 }}
         >
           <Link
             href="/"
-            aria-label="ACKMANN LAW FIRM"
-            className={`flex h-10 w-10 items-center justify-center overflow-hidden rounded-sm ${focusRing}`}
+            aria-label={siteConfig.firmName}
+            className={`flex items-center gap-3 ${focusRing}`}
           >
-            <Image
-              src="/brand/ackmann-monogram.webp"
-              alt=""
-              width={512}
-              height={512}
-              priority
-              className="h-full w-full object-cover"
-            />
+            <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-sm lg:h-12 lg:w-12">
+              <Image
+                src="/brand/ackmann-monogram.webp"
+                alt=""
+                width={512}
+                height={512}
+                priority
+                className="h-full w-full object-cover"
+              />
+            </span>
+            <span className="hidden flex-col sm:flex">
+              <span className="font-[family-name:var(--font-display)] text-lg leading-tight text-foreground">
+                Ackmann
+              </span>
+              <span className="text-[0.65rem] uppercase tracking-[0.25em] text-muted">
+                Law Firm
+              </span>
+            </span>
           </Link>
         </motion.span>
 
