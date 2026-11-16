@@ -125,10 +125,18 @@
     "servicesLabel": "Services",
     "approachLabel": "Approach",
     "banking-finance": {
-      "intro": "Advice on financing arrangements, credit facilities and day-to-day banking relationships, with a practical understanding of how financial institutions actually operate.",
-      "keyMatters": ["Credit and financing agreements", "Banking relationships and disputes", "Cross-border financial transactions"],
-      "services": ["Loan and facility documentation", "Security and guarantee structuring", "Bank account and credit disputes"],
-      "approach": "Banking matters are reviewed both as legal instruments and financial arrangements, so risk allocation and commercial terms are considered together, not in isolation."
+      "seoTitle": "Banking Lawyer in Israel | Banking Disputes",
+      "h1": "Banking Law and Bank Disputes in Israel",
+      "intro": "Support dealing with Israeli banks: blocked accounts, transfer refusals, complaints and bank documentation, grounded in a practical understanding of how financial institutions actually operate.",
+      "keyMatters": ["Blocked or restricted bank account", "Transfer refusal and source-of-funds requests", "Bank complaints (פניות הציבור)", "FATCA, CRS and bank documentation (W-8/W-9)", "Credit data (מערכת נתוני אשראי)", "Cross-border France–Israel banking"],
+      "services": ["Pre-litigation support with a bank", "Preparing bank complaints (פניות הציבור)", "Credit-data review and correction requests", "FATCA/CRS documentary assistance"],
+      "approach": "Every banking matter starts with the facts and the bank's own correspondence, with no promised outcome. The firm is not a US tax practice: when a question becomes genuinely fiscal, a specialized CPA or tax advisor may be recommended.",
+      "faq": [
+        { "question": "What should I do if my bank blocks my account in Israel?", "answer": "Request the reason in writing along with the documents the bank expects, then build a structured file before filing a complaint. Legal support helps frame the request and track deadlines, without guaranteeing the outcome." },
+        { "question": "Can an Israeli bank ask for the source of funds?", "answer": "Yes, as part of its compliance obligations (notably CRS/FATCA). Document requests should stay proportionate; a lawyer can help you respond and, if needed, challenge an excessive request." },
+        { "question": "How do I file a complaint with the Bank of Israel?", "answer": "First send a complaint (פניות הציבור) to the bank itself, then, if the response is unsatisfactory, escalate to the relevant Bank of Israel department with a documented file." },
+        { "question": "What is the נתוני אשראי credit-data system?", "answer": "It is Israel's credit-data system, which can contain errors affecting your access to credit. You can review your report and request a correction if you find an error." }
+      ]
     },
     "financial-regulation": {
       "intro": "Guidance through Israel's financial regulatory framework, including compliance obligations facing banks, credit providers and regulated financial institutions.",

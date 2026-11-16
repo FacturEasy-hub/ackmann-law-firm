@@ -125,10 +125,18 @@
     "servicesLabel": "Services",
     "approachLabel": "Approche",
     "banking-finance": {
-      "intro": "Conseil sur les financements, les facilités de crédit et les relations bancaires courantes, avec une compréhension pratique du fonctionnement réel des institutions financières.",
-      "keyMatters": ["Conventions de crédit et de financement", "Relations et litiges bancaires", "Transactions financières transfrontalières"],
-      "services": ["Documentation de prêts et facilités", "Structuration de sûretés et garanties", "Litiges bancaires et de compte"],
-      "approach": "Les dossiers bancaires sont examinés à la fois comme des instruments juridiques et des montages financiers, pour que la répartition des risques et les conditions commerciales soient pensées ensemble."
+      "seoTitle": "Avocat en droit bancaire en Israël | Litiges bancaires",
+      "h1": "Droit bancaire et litiges avec les banques en Israël",
+      "intro": "Accompagnement face aux banques israéliennes : comptes bloqués, refus de transfert, réclamations et documentation bancaire, avec une compréhension pratique du fonctionnement réel des établissements financiers.",
+      "keyMatters": ["Compte bancaire bloqué ou restreint", "Refus de transfert et demande de justificatifs de provenance des fonds", "Réclamations bancaires (פניות הציבור)", "FATCA, CRS et documentation bancaire (W-8/W-9)", "Données de crédit (מערכת נתוני אשראי)", "Opérations bancaires France–Israël"],
+      "services": ["Accompagnement précontentieux face à une banque", "Préparation de réclamations bancaires (פניות הציבור)", "Analyse et demande de correction de données de crédit", "Assistance documentaire FATCA/CRS"],
+      "approach": "Chaque dossier bancaire est d'abord analysé sur les faits et les échanges avec la banque, sans promettre de résultat. Le cabinet n'est pas un cabinet fiscal américain : lorsqu'une question devient réellement fiscale, un CPA ou fiscaliste spécialisé peut être recommandé.",
+      "faq": [
+        { "question": "Que faire si ma banque bloque mon compte en Israël ?", "answer": "Demandez par écrit le motif du blocage et les documents attendus, puis constituez un dossier structuré avant toute réclamation. Un accompagnement juridique aide à formuler la demande et à suivre les délais, sans garantir l'issue." },
+        { "question": "Une banque israélienne peut-elle demander la provenance des fonds ?", "answer": "Oui, dans le cadre de ses obligations de conformité (CRS/FATCA notamment). Les demandes de justificatifs doivent rester proportionnées ; un avocat peut vous aider à répondre et, si besoin, à contester une demande excessive." },
+        { "question": "Comment déposer une plainte auprès de la Banque d'Israël ?", "answer": "Il faut d'abord adresser une réclamation (פניות הציבור) à la banque elle-même, puis, si la réponse est insatisfaisante, saisir le service compétent de la Banque d'Israël avec un dossier documenté." },
+        { "question": "Qu'est-ce que le système נתוני אשראי ?", "answer": "C'est le système israélien de données de crédit, qui peut contenir des erreurs affectant votre accès au crédit. Il est possible de consulter son rapport et de demander une correction en cas d'erreur." }
+      ]
     },
     "financial-regulation": {
       "intro": "Accompagnement dans le cadre réglementaire financier israélien, y compris les obligations de conformité des banques, prêteurs et institutions financières régulées.",

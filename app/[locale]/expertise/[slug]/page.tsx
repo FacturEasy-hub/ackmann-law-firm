@@ -4,10 +4,13 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
+import { TextLink } from "@/components/ui/TextLink";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { ExpertiseHero } from "@/components/sections/ExpertiseHero";
 import { routing } from "@/lib/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
+import { relatedSlugs } from "@/lib/expertise-links";
 import {
   practiceAreaSlugs,
   isPracticeAreaSlug,
@@ -35,7 +38,9 @@ export async function generateMetadata({
   return buildMetadata({
     locale,
     path: `/expertise/${slug}`,
-    title: t(`items.${slug}`),
+    title: tDetail.has(`${slug}.seoTitle`)
+      ? tDetail(`${slug}.seoTitle`)
+      : t(`items.${slug}`),
     description: tDetail(`${slug}.intro`),
   });
 }
@@ -63,9 +68,15 @@ function ExpertiseDetailContent({ slug }: { slug: PracticeAreaSlug }) {
   const t = useTranslations("expertise");
   const tDetail = useTranslations("expertiseDetail");
 
-  const title = t(`items.${slug}`);
+  const title = tDetail.has(`${slug}.h1`)
+    ? tDetail(`${slug}.h1`)
+    : t(`items.${slug}`);
   const keyMatters = tDetail.raw(`${slug}.keyMatters`) as string[];
   const services = tDetail.raw(`${slug}.services`) as string[];
+  const faq = tDetail.has(`${slug}.faq`)
+    ? (tDetail.raw(`${slug}.faq`) as { question: string; answer: string }[])
+    : [];
+  const related = relatedSlugs[slug] ?? [];
 
   return (
     <>
@@ -78,7 +89,7 @@ function ExpertiseDetailContent({ slug }: { slug: PracticeAreaSlug }) {
         intro={tDetail(`${slug}.intro`)}
       />
 
-      <Section className="border-b border-border">
+      <Section>
         <Container className="grid gap-12 md:grid-cols-2 md:gap-16">
           <div>
             <h2 className="font-[family-name:var(--font-display)] text-h3">
@@ -108,7 +119,7 @@ function ExpertiseDetailContent({ slug }: { slug: PracticeAreaSlug }) {
         </Container>
       </Section>
 
-      <Section className="border-b border-border">
+      <Section className="bg-surface">
         <Container>
           <h2 className="font-[family-name:var(--font-display)] text-h3">
             {tDetail("approachLabel")}
@@ -118,6 +129,46 @@ function ExpertiseDetailContent({ slug }: { slug: PracticeAreaSlug }) {
           </p>
         </Container>
       </Section>
+
+      {faq.length > 0 && (
+        <Section>
+          <JsonLd
+            data={{
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faq.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: { "@type": "Answer", text: item.answer },
+              })),
+            }}
+          />
+          <Container className="flex flex-col gap-8">
+            {faq.map((item) => (
+              <div key={item.question}>
+                <h2 className="font-[family-name:var(--font-display)] text-h4">
+                  {item.question}
+                </h2>
+                <p className="mt-2 max-w-2xl text-body-lg text-foreground/80">
+                  {item.answer}
+                </p>
+              </div>
+            ))}
+          </Container>
+        </Section>
+      )}
+
+      {related.length > 0 && (
+        <Section className="bg-surface">
+          <Container className="flex flex-wrap gap-6">
+            {related.map((relatedSlug) => (
+              <TextLink key={relatedSlug} href={`/expertise/${relatedSlug}`}>
+                {t(`items.${relatedSlug}`)}
+              </TextLink>
+            ))}
+          </Container>
+        </Section>
+      )}
     </>
   );
 }
