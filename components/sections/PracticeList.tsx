@@ -10,10 +10,29 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { TextLink } from "@/components/ui/TextLink";
 import { Reveal } from "@/components/motion/Reveal";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
-import { practiceAreaSlugs } from "@/lib/practice-areas";
+import {
+  practiceAreaSlugs,
+  type PracticeAreaSlug,
+} from "@/lib/practice-areas";
 
 const focusRing =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground";
+
+/**
+ * One distinct generic stand-in photo per practice area (subject-matched,
+ * not just "any photo") — all CC-licensed stock from Wikimedia Commons,
+ * attributed in ImagePlaceholder.tsx's doc comment. `banking-finance` has
+ * no clean subject-matched option yet (searches kept returning mislabeled
+ * or people-identifiable photos) and falls back to the Jerusalem shot.
+ */
+const practiceImages: Record<PracticeAreaSlug, string> = {
+  "banking-finance": "/brand/placeholder-jerusalem.jpg",
+  "corporate-commercial": "/brand/practice-corporate.jpg",
+  compliance: "/brand/practice-compliance.jpg",
+  "administrative-public-law": "/brand/practice-admin.jpg",
+  "dispute-resolution": "/brand/practice-dispute.jpg",
+  "private-clients": "/brand/practice-private.jpg",
+};
 
 /**
  * SPEC.md Section 13/5.4 — editorial list, not icon cards. Rows have no
@@ -32,7 +51,7 @@ export function PracticeList({
   showHeader?: boolean;
 }) {
   const t = useTranslations("expertise");
-  const [active, setActive] = useState<string | null>(null);
+  const [active, setActive] = useState<PracticeAreaSlug | null>(null);
 
   return (
     <Section>
@@ -74,7 +93,7 @@ export function PracticeList({
                 >
                   <ImagePlaceholder
                     label={t(`items.${active}`)}
-                    src="/brand/placeholder-jerusalem.jpg"
+                    src={practiceImages[active]}
                     className="h-full"
                   />
                 </motion.div>

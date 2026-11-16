@@ -9,10 +9,30 @@ type ImagePlaceholderProps = ComponentPropsWithoutRef<"div"> & {
    * no-`src` "pending" gradient (still used where no stand-in exists yet,
    * e.g. the founder portrait) don't need to change.
    *
-   * `/brand/placeholder-jerusalem.jpg` (used in Hero/PracticeList): cropped
-   * from "2013-Jerusalem-View from Armon Hanatziv.jpg", Wikimedia Commons,
-   * CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:2013-Jerusalem-View_from_Armon_Hanatziv.jpg.
-   * Replace (and drop this note) once real photography lands. */
+   * All current stand-ins are cropped CC-licensed Wikimedia Commons photos
+   * (per-practice-area mapping lives in `PracticeList.tsx`'s
+   * `practiceImages`) — replace (and drop this note) once real
+   * photography lands.
+   *
+   * `/brand/placeholder-jerusalem.jpg` (Hero; also Banking & Finance's
+   * fallback in PracticeList): cropped from "2013-Jerusalem-View from Armon
+   * Hanatziv.jpg", CC BY-SA 4.0 —
+   * https://commons.wikimedia.org/wiki/File:2013-Jerusalem-View_from_Armon_Hanatziv.jpg
+   * `/brand/practice-corporate.jpg`: cropped from "Chairs in a meeting room
+   * (Unsplash).jpg", CC0 —
+   * https://commons.wikimedia.org/wiki/File:Chairs_in_a_meeting_room_(Unsplash).jpg
+   * `/brand/practice-compliance.jpg`: cropped from "Legal Contract &
+   * Signature - Warm Tones.jpg", CC BY 2.0 —
+   * https://commons.wikimedia.org/wiki/File:Legal_Contract_%26_Signature_-_Warm_Tones.jpg
+   * `/brand/practice-admin.jpg`: cropped from "Austrian Parliament
+   * Building.jpg", CC BY-SA 3.0 —
+   * https://commons.wikimedia.org/wiki/File:Austrian_Parliament_Building.jpg
+   * `/brand/practice-dispute.jpg`: cropped from "Courtroom One Gavel -
+   * Flickr - Joe Gratz.jpg", CC0 —
+   * https://commons.wikimedia.org/wiki/File:Courtroom_One_Gavel_-_Flickr_-_Joe_Gratz.jpg
+   * `/brand/practice-private.jpg`: cropped from "Ardmore Residential Units,
+   * Fremantle, July 2023 01.jpg", CC BY-SA 4.0 —
+   * https://commons.wikimedia.org/wiki/File:Ardmore_Residential_Units,_Fremantle,_July_2023_01.jpg */
   src?: string;
 };
 
