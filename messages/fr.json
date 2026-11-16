@@ -164,10 +164,12 @@
       "approach": "Chaque litige est d'abord évalué sur le fond et sur son coût — le contentieux est engagé quand c'est le bon outil, pas par défaut."
     },
     "private-clients": {
-      "intro": "Conseil juridique personnel pour des particuliers confrontés à des questions réglementaires, bancaires ou administratives en Israël, y compris des clients internationaux et francophones.",
-      "keyMatters": ["Questions bancaires et réglementaires personnelles", "Enjeux transfrontaliers", "Questions administratives individuelles"],
-      "services": ["Conseil juridique personnel", "Représentation dans des dossiers bancaires", "Accompagnement dans des démarches administratives"],
-      "approach": "Les clients privés reçoivent la même précision et la même clarté que les clients institutionnels, avec un conseil traduit clairement, sans jargon juridique ou réglementaire."
+      "seoTitle": "Avocat France–Israël | Clients privés",
+      "h1": "Accompagnement juridique France–Israël",
+      "intro": "Conseil juridique personnel pour des particuliers confrontés à des questions bancaires, réglementaires, successorales ou immobilières entre la France et Israël.",
+      "keyMatters": ["Difficultés bancaires personnelles (compte bloqué, transfert, FATCA/CRS)", "Démarches France–Israël (procurations, représentation, coordination)", "Successions et patrimoine avec élément israélien ou international", "Immobilier avec élément international"],
+      "services": ["Conseil juridique personnel sur les questions bancaires et réglementaires", "Démarches et procurations France–Israël", "Coordination de dossiers successoraux avec des professionnels spécialisés", "Accompagnement pour l'acquisition ou la vente de biens avec élément international"],
+      "approach": "Les clients privés reçoivent la même précision et la même clarté que les clients institutionnels, avec un conseil traduit clairement, sans jargon juridique ou réglementaire. Le cabinet accompagne certains dossiers successoraux et patrimoniaux comportant un élément israélien ou international et coordonne, lorsque nécessaire, l'intervention de professionnels spécialisés."
     }
   },
   "insightsPage": {

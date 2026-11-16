@@ -164,10 +164,12 @@
       "approach": "Every dispute is assessed first on its merits and its cost — litigation is pursued when it is the right tool, not the default one."
     },
     "private-clients": {
-      "intro": "Personal legal advice for individuals navigating regulatory, banking or administrative matters in Israel, including international and French-speaking clients.",
-      "keyMatters": ["Personal banking and regulatory matters", "Cross-border client concerns", "Administrative matters affecting individuals"],
-      "services": ["Personal legal advice", "Banking-related representation", "Administrative matter support"],
-      "approach": "Private clients receive the same precision and directness as institutional clients, with advice translated clearly out of legal and regulatory jargon."
+      "seoTitle": "France–Israel Lawyer | Private Clients",
+      "h1": "Legal Support Between France and Israel",
+      "intro": "Personal legal advice for individuals facing banking, regulatory, succession or real-estate matters between France and Israel.",
+      "keyMatters": ["Personal banking difficulties (blocked accounts, transfers, FATCA/CRS)", "France–Israel matters (powers of attorney, representation, coordination)", "Succession and estate matters with an Israeli or international element", "Real estate with an international element"],
+      "services": ["Personal legal advice on banking and regulatory matters", "France–Israel procedures and powers of attorney", "Coordinating succession matters with specialized professionals", "Support for property purchases or sales with an international element"],
+      "approach": "Private clients receive the same precision and clarity as institutional clients, with advice translated plainly and free of legal or regulatory jargon. The firm supports certain succession and estate matters with an Israeli or international element and coordinates, where needed, the involvement of specialized professionals."
     }
   },
   "insightsPage": {
