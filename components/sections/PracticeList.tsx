@@ -74,6 +74,7 @@ export function PracticeList({
                 >
                   <ImagePlaceholder
                     label={t(`items.${active}`)}
+                    src="/brand/placeholder-hero.jpg"
                     className="h-full"
                   />
                 </motion.div>

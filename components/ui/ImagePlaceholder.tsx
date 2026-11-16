@@ -1,23 +1,47 @@
 import type { ComponentPropsWithoutRef } from "react";
+import Image from "next/image";
 
 type ImagePlaceholderProps = ComponentPropsWithoutRef<"div"> & {
   label: string;
   aspectRatio?: string;
+  /** Generic stand-in photo while real photography is pending — swap for
+   * the final shot by changing this prop only; surrounding layout and the
+   * no-`src` "pending" gradient (still used where no stand-in exists yet,
+   * e.g. the founder portrait) don't need to change. */
+  src?: string;
 };
 
 /**
  * Stand-in for the full-bleed photography the "plein cadre" direction needs
  * (hero, founder portrait, architecture band) — no approved shots exist yet
- * (SPEC.md Section 42 keeps this open). Swap for a real next/image inside
- * this box once photography lands; surrounding layout won't need to change.
+ * (SPEC.md Section 42 keeps this open).
  */
 export function ImagePlaceholder({
   label,
   aspectRatio,
+  src,
   className = "",
   style,
   ...props
 }: ImagePlaceholderProps) {
+  if (src) {
+    return (
+      <div
+        className={`relative overflow-hidden ${className}`}
+        style={aspectRatio ? { aspectRatio, ...style } : style}
+        {...props}
+      >
+        <Image
+          src={src}
+          alt=""
+          fill
+          sizes="(min-width: 768px) 50vw, 100vw"
+          className="object-cover"
+        />
+      </div>
+    );
+  }
+
   return (
     <div
       className={`relative overflow-hidden bg-gradient-to-br from-brand-navy via-brand-navy/90 to-[#0d1f19] ${className}`}

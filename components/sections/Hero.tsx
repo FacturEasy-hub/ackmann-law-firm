@@ -50,6 +50,7 @@ export function Hero() {
         <div className="radius-organic relative aspect-[4/5] overflow-hidden shadow-[0_8px_16px_-4px_rgba(21,46,37,0.3),0_40px_80px_-20px_rgba(21,46,37,0.5)] ring-1 ring-accent/25 md:aspect-[3/4]">
           <ImagePlaceholder
             label="Jerusalem — photography pending"
+            src="/brand/placeholder-hero.jpg"
             className="absolute inset-0"
           />
         </div>
