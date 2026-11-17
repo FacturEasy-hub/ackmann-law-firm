@@ -6,7 +6,6 @@ import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { GoogleReviews } from "@/components/sections/GoogleReviews";
-import { ReviewsTicker } from "@/components/sections/ReviewsTicker";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { siteConfig } from "@/lib/config";
 import { buildMetadata } from "@/lib/seo";
@@ -57,7 +56,12 @@ function ContactPageContent() {
           <p className="max-w-xl text-body-lg text-foreground/80">
             {t("intro")}
           </p>
-          <ReviewsTicker reviews={t.raw("reviews")} />
+          <div className="flex items-center gap-2 text-sm">
+            <span aria-hidden="true" className="text-accent">
+              ★★★★★
+            </span>
+            <span className="text-muted">{t("ratingSummary")}</span>
+          </div>
         </Container>
       </Section>
 
