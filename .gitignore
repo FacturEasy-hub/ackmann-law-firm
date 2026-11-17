@@ -45,3 +45,8 @@ next-env.d.ts
 # kept aside for comparison, not part of the actual app (SPEC.md/TASKS.md
 # Phase 1.1: "No default Next.js demo content remains").
 /_old-scaffold/
+
+# local tooling artifacts
+/.mcp.json
+/.playwright-mcp/
+/graphify-out/

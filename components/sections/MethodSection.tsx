@@ -18,7 +18,7 @@ export function MethodSection() {
   const t = useTranslations("method");
 
   return (
-    <Section className="bg-surface">
+    <Section id="method" className="bg-surface">
       <Container className="flex flex-col gap-10">
         <Eyebrow>{t("eyebrow")}</Eyebrow>
         <Reveal className="grid gap-10 md:grid-cols-3 md:gap-8">
@@ -30,7 +30,7 @@ export function MethodSection() {
               <h3 className="font-[family-name:var(--font-display)] text-h3">
                 {t(`steps.${key}.title`)}
               </h3>
-              <p className="max-w-xs text-sm text-muted">
+              <p className="max-w-xs text-base text-muted">
                 {t(`steps.${key}.body`)}
               </p>
             </div>

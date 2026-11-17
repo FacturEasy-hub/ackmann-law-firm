@@ -8,10 +8,14 @@ import {
   sendChatMessage,
   type ChatMessage,
 } from "@/lib/server/chat-actions";
+import { practiceAreaSlugs } from "@/lib/practice-areas";
+
+const focusRing =
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground";
 
 /**
- * Site-wide floating launcher, native <dialog> (same showModal() pattern as
- * ContactDialog — focus trap and Escape-to-close for free). Scope is
+ * Site-wide floating launcher, native <dialog> (showModal() gives focus
+ * trap and Escape-to-close for free). Scope is
  * general orientation only, enforced server-side by the system prompt in
  * chat-actions.ts, not by anything in this component — never add a client
  * "jailbreak" guard here, it would be trivially bypassable and give a
@@ -22,6 +26,7 @@ import {
  */
 export function ChatWidget() {
   const t = useTranslations("chat");
+  const tExpertise = useTranslations("expertise");
   const locale = useLocale();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -39,9 +44,8 @@ export function ChatWidget() {
     if (!insideDialog) dialogRef.current?.close();
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const trimmed = input.trim();
+  function sendMessage(text: string) {
+    const trimmed = text.trim();
     if (!trimmed || isPending) return;
 
     const nextMessages: ChatMessage[] = [
@@ -65,6 +69,11 @@ export function ChatWidget() {
         ]);
       }
     });
+  }
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    sendMessage(input);
   }
 
   return (
@@ -102,6 +111,24 @@ export function ChatWidget() {
 
           <div className="flex-1 overflow-y-auto px-6 py-4">
             <p className="text-sm text-muted">{t("disclaimer")}</p>
+
+            {messages.length === 0 && (
+              <div className="mt-4 flex flex-col gap-2">
+                <p className="text-sm text-muted">{t("topicsPrompt")}</p>
+                <div className="flex flex-wrap gap-2">
+                  {practiceAreaSlugs.map((slug) => (
+                    <button
+                      key={slug}
+                      type="button"
+                      onClick={() => sendMessage(tExpertise(`items.${slug}`))}
+                      className={`rounded-full border border-border px-3 py-1.5 text-sm transition-colors hover:border-accent hover:bg-surface ${focusRing}`}
+                    >
+                      {tExpertise(`items.${slug}`)}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div className="mt-4 flex flex-col gap-3">
               {messages.map((message, index) => (

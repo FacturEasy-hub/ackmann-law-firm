@@ -47,6 +47,14 @@ export function buildMetadata({
       type: "website",
       url: `/${locale}${path}`,
     },
+    // Reuses the same title/description/OG-image Twitter/X already falls
+    // back to when this is absent — set explicitly so the card renders as
+    // summary_large_image instead of Twitter's default small-image guess.
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
 

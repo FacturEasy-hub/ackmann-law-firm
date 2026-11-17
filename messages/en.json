@@ -4,6 +4,7 @@
     "closeLabel": "Close chat",
     "heading": "Got a question?",
     "disclaimer": "Automated welcome assistant — for advice on your matter, use the contact form instead.",
+    "topicsPrompt": "What's this about?",
     "placeholder": "Type your message…",
     "send": "Send",
     "typing": "…",
@@ -30,10 +31,7 @@
     "title": "ACKMANN LAW FIRM",
     "positioning": "Independent legal counsel for business, finance and regulation.",
     "ctaPrimary": "Explore the firm",
-    "ctaSecondary": "Contact",
-    "contactHeading": "Get in touch",
-    "contactSub": "Every message is read personally.",
-    "closeDialog": "Close"
+    "ctaSecondary": "Contact"
   },
   "method": {
     "eyebrow": "Our approach",
@@ -92,6 +90,57 @@
   "contactCta": {
     "statement": "Let’s discuss your matter.",
     "cta": "Contact the firm"
+  },
+  "homepage": {
+    "segments": {
+      "eyebrow": "Who We Help",
+      "heading": "Built for the people and institutions that need it most.",
+      "items": {
+        "corporate-commercial": {
+          "title": "Companies & Executives",
+          "body": "Corporate structuring, commercial agreements and governance for businesses and entrepreneurs."
+        },
+        "banking-finance": {
+          "title": "Banking & Finance Professionals",
+          "body": "Practical support for institutions and professionals navigating Israeli banking and financial regulation."
+        },
+        "private-clients": {
+          "title": "Private & International Clients",
+          "body": "Independent counsel for private clients, investors and French-speaking clients in Israel."
+        },
+        "administrative-public-law": {
+          "title": "Individuals & Public Administration",
+          "body": "Support for individuals facing regulatory, administrative or public-sector matters."
+        }
+      }
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "heading": "Frequently asked questions",
+      "ctaQuestion": "Still have questions?",
+      "items": [
+        {
+          "question": "Which languages do you work in?",
+          "answer": "English, French and Hebrew — Jonathan Ackmann works directly with clients in all three."
+        },
+        {
+          "question": "Where is the firm based?",
+          "answer": "In Jerusalem, Israel, serving clients locally and internationally."
+        },
+        {
+          "question": "Which areas do you practice in?",
+          "answer": "Banking & finance, corporate & commercial, compliance, administrative & public law, dispute resolution and private clients. See the full expertise page for details."
+        },
+        {
+          "question": "How does a first contact work?",
+          "answer": "Send a message through the contact form. Every message is read personally, and you'll hear back to discuss whether and how the firm can help."
+        },
+        {
+          "question": "Do you work with clients outside Israel?",
+          "answer": "Yes — the firm regularly advises international and French-speaking clients, including cross-border France–Israel matters."
+        }
+      ]
+    }
   },
   "firmPage": {
     "eyebrow": "The Firm",

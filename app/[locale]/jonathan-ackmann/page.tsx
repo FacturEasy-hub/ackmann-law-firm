@@ -44,11 +44,15 @@ export default async function JonathanPage({
   const t = await getTranslations({ locale, namespace: "jonathanPage" });
   const tFounder = await getTranslations({ locale, namespace: "founder" });
   const education = t.raw("education") as EducationEntry[];
+  const languages = t.raw("languages") as string[];
 
   return (
     <main>
       {/* Person JSON-LD — grounded only in facts already shown on this
-          page (SPEC.md Section 26/32: no fabricated credentials). */}
+          page (SPEC.md Section 26/32: no fabricated credentials).
+          knowsLanguage/hasCredential add structure around facts already
+          rendered as text below (languages list, bar number/admission
+          date via founder.bar) — no new claims. */}
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -61,6 +65,17 @@ export default async function JonathanPage({
             "@type": "CollegeOrUniversity",
             name: entry.institution,
           })),
+          knowsLanguage: languages,
+          hasCredential: {
+            "@type": "EducationalOccupationalCredential",
+            credentialCategory: "license",
+            recognizedBy: {
+              "@type": "Organization",
+              name: `${siteConfig.barCountry} Bar Association`,
+            },
+            identifier: siteConfig.barNumber,
+            dateCreated: siteConfig.admissionDate,
+          },
         }}
       />
       <JonathanContent />

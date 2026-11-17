@@ -11,11 +11,11 @@ import { Reveal } from "@/components/motion/Reveal";
  * decisive moment, not every page). No `border-b`: Footer is the same navy
  * directly below, so a border would just split one dark zone into two.
  */
-export function ContactCTA() {
+export function ContactCTA({ id }: { id?: string }) {
   const t = useTranslations("contactCta");
 
   return (
-    <Section className="surface-inverse bg-background">
+    <Section id={id} className="surface-inverse bg-background">
       <Container>
         <Reveal className="flex flex-col items-start gap-6">
           <p className="max-w-lg text-h3 font-[family-name:var(--font-display)]">

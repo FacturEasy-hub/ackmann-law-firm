@@ -33,7 +33,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
 
     for (const slug of practiceAreaSlugs) {
-      entries.push({ url: `${base}/${locale}/expertise/${slug}` });
+      entries.push({
+        url: `${base}/${locale}/expertise/${slug}`,
+        alternates: {
+          languages: Object.fromEntries(
+            routing.locales.map((l) => [
+              l,
+              `${base}/${l}/expertise/${slug}`,
+            ]),
+          ),
+        },
+      });
     }
 
     for (const article of getArticles(locale)) {

@@ -4,6 +4,7 @@
     "closeLabel": "Fermer le chat",
     "heading": "Une question ?",
     "disclaimer": "Assistant d'accueil automatisé — pour un conseil sur votre dossier, passez par le formulaire de contact.",
+    "topicsPrompt": "De quoi s'agit-il ?",
     "placeholder": "Écrivez votre message…",
     "send": "Envoyer",
     "typing": "…",
@@ -30,10 +31,7 @@
     "title": "ACKMANN LAW FIRM",
     "positioning": "Conseil juridique indépendant pour les entreprises, la finance et la réglementation.",
     "ctaPrimary": "Découvrir le cabinet",
-    "ctaSecondary": "Contact",
-    "contactHeading": "Nous contacter",
-    "contactSub": "Chaque message est lu personnellement.",
-    "closeDialog": "Fermer"
+    "ctaSecondary": "Contact"
   },
   "method": {
     "eyebrow": "Notre méthode",
@@ -92,6 +90,57 @@
   "contactCta": {
     "statement": "Discutons de votre dossier.",
     "cta": "Contacter le cabinet"
+  },
+  "homepage": {
+    "segments": {
+      "eyebrow": "À qui nous nous adressons",
+      "heading": "Conçu pour les personnes et institutions qui en ont le plus besoin.",
+      "items": {
+        "corporate-commercial": {
+          "title": "Entreprises & dirigeants",
+          "body": "Structuration juridique, contrats commerciaux et gouvernance pour entreprises et entrepreneurs."
+        },
+        "banking-finance": {
+          "title": "Professionnels de la banque & de la finance",
+          "body": "Accompagnement concret des institutions et professionnels face à la réglementation bancaire et financière israélienne."
+        },
+        "private-clients": {
+          "title": "Clients privés & internationaux",
+          "body": "Conseil indépendant pour clients privés, investisseurs et francophones installés en Israël."
+        },
+        "administrative-public-law": {
+          "title": "Particuliers & administration publique",
+          "body": "Accompagnement des particuliers confrontés à des démarches réglementaires, administratives ou publiques."
+        }
+      }
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "heading": "Questions fréquentes",
+      "ctaQuestion": "D'autres questions ?",
+      "items": [
+        {
+          "question": "Dans quelles langues travaillez-vous ?",
+          "answer": "Anglais, français et hébreu — Jonathan Ackmann échange directement avec les clients dans ces trois langues."
+        },
+        {
+          "question": "Où le cabinet est-il situé ?",
+          "answer": "À Jérusalem, en Israël, avec des clients en Israël et à l'international."
+        },
+        {
+          "question": "Quels sont vos domaines d'intervention ?",
+          "answer": "Droit bancaire, droit des sociétés et commercial, conformité, droit administratif et public, règlement des litiges et clients privés. Le détail est disponible sur la page Expertise."
+        },
+        {
+          "question": "Comment se déroule un premier contact ?",
+          "answer": "Envoyez un message via le formulaire de contact. Chaque message est lu personnellement, et vous recevrez une réponse pour discuter de la possibilité et de la manière d'avancer."
+        },
+        {
+          "question": "Travaillez-vous avec des clients hors d'Israël ?",
+          "answer": "Oui — le cabinet conseille régulièrement des clients internationaux et francophones, y compris sur des dossiers France–Israël."
+        }
+      ]
+    }
   },
   "firmPage": {
     "eyebrow": "Le Cabinet",

@@ -96,6 +96,12 @@ export default async function LocaleLayout({
   // Enables static rendering for this request (next-intl requirement).
   setRequestLocale(locale);
 
+  const tJonathan = await getTranslations({
+    locale,
+    namespace: "jonathanPage",
+  });
+  const languages = tJonathan.raw("languages") as string[];
+
   const dir = isRtl(locale) ? "rtl" : "ltr";
   const fontVars =
     locale === "he"
@@ -125,6 +131,13 @@ export default async function LocaleLayout({
               "@type": "Person",
               name: siteConfig.founderName,
             },
+            // "IL" only — Jonathan is admitted to the Israeli Bar only;
+            // SPEC.md's "international/French-speaking clients" describes
+            // who the firm serves, not a second jurisdiction it practices
+            // in, so claiming areaServed beyond Israel would overstate
+            // admission.
+            areaServed: "IL",
+            knowsLanguage: languages,
           }}
         />
         <NextIntlClientProvider>

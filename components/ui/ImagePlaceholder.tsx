@@ -34,6 +34,11 @@ type ImagePlaceholderProps = ComponentPropsWithoutRef<"div"> & {
    * Fremantle, July 2023 01.jpg", CC BY-SA 4.0 —
    * https://commons.wikimedia.org/wiki/File:Ardmore_Residential_Units,_Fremantle,_July_2023_01.jpg */
   src?: string;
+  /** LCP images (e.g. a full-bleed hero photo) need this so Next doesn't
+   * lazy-load the one image guaranteed to be on screen at first paint. */
+  priority?: boolean;
+  /** Override when the image isn't ~50vw at desktop (e.g. full-bleed). */
+  sizes?: string;
 };
 
 /**
@@ -45,6 +50,8 @@ export function ImagePlaceholder({
   label,
   aspectRatio,
   src,
+  priority = false,
+  sizes = "(min-width: 768px) 50vw, 100vw",
   className = "",
   style,
   ...props
@@ -60,7 +67,8 @@ export function ImagePlaceholder({
           src={src}
           alt=""
           fill
-          sizes="(min-width: 768px) 50vw, 100vw"
+          priority={priority}
+          sizes={sizes}
           className="object-cover"
         />
       </div>

@@ -44,17 +44,20 @@ const practiceImages: Record<PracticeAreaSlug, string> = {
  */
 export function PracticeList({
   showHeader = true,
+  id,
 }: {
   /** Set to false on `/expertise` itself — that page already has its own
    * H1, so a "View all expertise" link back to the same page would be
    * self-referential. */
   showHeader?: boolean;
+  /** Homepage passes "expertise" so SectionDots can anchor to it. */
+  id?: string;
 }) {
   const t = useTranslations("expertise");
   const [active, setActive] = useState<PracticeAreaSlug | null>(null);
 
   return (
-    <Section>
+    <Section id={id}>
       <Container className="flex flex-col gap-8">
         {showHeader && (
           <div className="flex items-baseline justify-between gap-4">

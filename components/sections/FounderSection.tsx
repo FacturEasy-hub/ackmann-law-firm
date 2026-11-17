@@ -21,7 +21,7 @@ export function FounderSection() {
   const t = useTranslations("founder");
 
   return (
-    <Section>
+    <Section id="team">
       <Container>
         <Reveal className="grid gap-10 md:grid-cols-[1fr_1.2fr] md:items-center md:gap-16">
           <ImagePlaceholder
