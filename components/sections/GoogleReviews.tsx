@@ -26,7 +26,7 @@ export function GoogleReviews() {
           </h2>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2">
           {reviews.map((review) => (
             <figure key={review.author} className="flex flex-col gap-3">
               <div aria-label="5/5" className="text-accent">
