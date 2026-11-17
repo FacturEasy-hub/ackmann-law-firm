@@ -10,6 +10,7 @@ import { isRtl, siteConfig } from "@/lib/config";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ChatWidget } from "@/components/chat/ChatWidget";
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import "../globals.css";
@@ -147,6 +148,7 @@ export default async function LocaleLayout({
             <Header />
             {children}
             <Footer />
+            <WhatsAppButton />
             <ChatWidget />
           </MotionConfig>
         </NextIntlClientProvider>
