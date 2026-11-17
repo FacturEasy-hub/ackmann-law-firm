@@ -38,6 +38,19 @@ export const siteConfig = {
     country: "Israel",
   },
 
+  // Geocoded directly from the address above (not read off the Google
+  // Business Profile pin, which is currently mislocated ~40km south —
+  // see docs/SEO-GEO-AUDIT.md).
+  geo: {
+    latitude: 31.7506835,
+    longitude: 35.2181525,
+  },
+
+  // Google Business Profile — CID-based Maps URL doubles as the `sameAs`
+  // target and the "leave a review" link (opens straight to the review
+  // composer). Confirm this CID still resolves if GBP is ever re-verified.
+  googleBusinessProfileUrl: "https://www.google.com/maps?cid=5075037042310149195",
+
   // Populate as accounts are confirmed. Renderers must skip empty values —
   // never render a social icon when its link is empty.
   socialLinks: {

@@ -61,6 +61,7 @@ export default async function JonathanPage({
           jobTitle: tFounder("title"),
           worksFor: { "@type": "LegalService", name: siteConfig.firmName },
           url: `${siteConfig.canonicalBaseUrl}/${locale}/jonathan-ackmann`,
+          sameAs: [siteConfig.googleBusinessProfileUrl],
           alumniOf: education.map((entry) => ({
             "@type": "CollegeOrUniversity",
             name: entry.institution,

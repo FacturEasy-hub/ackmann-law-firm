@@ -9,6 +9,7 @@ export const ANALYTICS_EVENTS = {
   phoneClick: "phone_click",
   emailClick: "email_click",
   whatsappClick: "whatsapp_click",
+  googleReviewClick: "google_review_click",
   expertiseView: "expertise_view",
   articleView: "article_view",
 } as const;

@@ -244,7 +244,8 @@
   "contactPage": {
     "title": "Get in touch.",
     "intro": "Reach out by phone, email or the form below. Every message is reviewed personally — you'll hear back promptly.",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "googleReview": "Leave a Google review"
   },
   "contactForm": {
     "nameLabel": "Name",

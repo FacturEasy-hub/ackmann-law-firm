@@ -106,6 +106,15 @@ function ContactDetails() {
       >
         {t("whatsapp")}
       </TrackedLink>
+      <TrackedLink
+        href={siteConfig.googleBusinessProfileUrl}
+        event={ANALYTICS_EVENTS.googleReviewClick}
+        target="_blank"
+        rel="noreferrer noopener"
+        className="text-sm text-muted transition-colors hover:text-foreground"
+      >
+        {t("googleReview")}
+      </TrackedLink>
     </div>
   );
 }

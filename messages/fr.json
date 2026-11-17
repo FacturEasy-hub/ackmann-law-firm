@@ -244,7 +244,8 @@
   "contactPage": {
     "title": "Nous contacter.",
     "intro": "Par téléphone, e-mail ou via le formulaire ci-dessous. Chaque message est lu personnellement — vous aurez une réponse rapidement.",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "googleReview": "Laisser un avis Google"
   },
   "contactForm": {
     "nameLabel": "Nom",

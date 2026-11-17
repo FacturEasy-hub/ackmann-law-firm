@@ -1130,6 +1130,7 @@ contact_submit
 phone_click
 email_click
 whatsapp_click
+google_review_click
 expertise_view
 article_view
 ```

@@ -128,6 +128,16 @@ export default async function LocaleLayout({
               addressLocality: siteConfig.address.city,
               addressCountry: siteConfig.address.country,
             },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: siteConfig.geo.latitude,
+              longitude: siteConfig.geo.longitude,
+            },
+            // Ties this entity to the Google Business Profile listing —
+            // helps disambiguate from unrelated same-sounding US firms
+            // (Akerman LLP, various "Ackerman Law Firm" offices) in both
+            // Google's Knowledge Graph and LLM answer engines.
+            sameAs: [siteConfig.googleBusinessProfileUrl],
             founder: {
               "@type": "Person",
               name: siteConfig.founderName,
