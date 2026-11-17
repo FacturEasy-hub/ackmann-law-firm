@@ -82,11 +82,11 @@ function ContactDetails() {
   const whatsappHref = `https://wa.me/${siteConfig.whatsappIntl.replace(/\D/g, "")}`;
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-3">
       <p className="font-[family-name:var(--font-display)] text-h4">
         {siteConfig.firmName}
       </p>
-      <address className="not-italic text-sm text-muted">
+      <address className="not-italic text-sm text-foreground/80">
         {siteConfig.address.line1}, {siteConfig.address.line2}
         <br />
         {siteConfig.address.city}, {siteConfig.address.country}
@@ -94,14 +94,14 @@ function ContactDetails() {
       <TrackedLink
         href={`tel:${siteConfig.phoneIntl}`}
         event={ANALYTICS_EVENTS.phoneClick}
-        className="text-sm text-muted transition-colors hover:text-foreground"
+        className="text-sm font-medium text-foreground transition-colors hover:text-accent"
       >
         {siteConfig.phone}
       </TrackedLink>
       <TrackedLink
         href={`mailto:${siteConfig.email}`}
         event={ANALYTICS_EVENTS.emailClick}
-        className="text-sm text-muted transition-colors hover:text-foreground"
+        className="text-sm font-medium text-foreground transition-colors hover:text-accent"
       >
         {siteConfig.email}
       </TrackedLink>
@@ -111,7 +111,7 @@ function ContactDetails() {
         event={ANALYTICS_EVENTS.whatsappClick}
         target="_blank"
         rel="noreferrer noopener"
-        className="text-sm text-muted transition-colors hover:text-foreground"
+        className="text-sm font-medium text-foreground transition-colors hover:text-accent"
       >
         {t("whatsapp")}
       </TrackedLink>
@@ -120,7 +120,7 @@ function ContactDetails() {
         event={ANALYTICS_EVENTS.googleReviewClick}
         target="_blank"
         rel="noreferrer noopener"
-        className="text-sm text-muted transition-colors hover:text-foreground"
+        className="text-sm font-medium text-foreground transition-colors hover:text-accent"
       >
         {t("googleReview")}
       </TrackedLink>

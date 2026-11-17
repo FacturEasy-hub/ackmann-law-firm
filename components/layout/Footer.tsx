@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Divider } from "@/components/ui/Divider";
 import { LanguageSwitcher } from "@/components/navigation/LanguageSwitcher";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
+import { Button } from "@/components/ui/Button";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import { navItems } from "@/lib/nav-items";
 import { siteConfig } from "@/lib/config";
@@ -69,6 +70,7 @@ export function Footer() {
           </nav>
 
           <div className="flex flex-col items-start gap-6">
+            <Button href="/contact">{t("contact")}</Button>
             <LanguageSwitcher />
             {socialEntries.length > 0 && (
               <nav aria-label="Social" className="flex gap-4">
