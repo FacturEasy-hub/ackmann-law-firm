@@ -125,76 +125,80 @@ export function ContactForm() {
         </div>
       )}
 
-      <div>
-        <label htmlFor="name" className="text-sm text-muted">
-          {t("nameLabel")}
-        </label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          required
-          maxLength={100}
-          aria-invalid={Boolean(fieldErrors.name)}
-          aria-describedby={fieldErrors.name ? "name-error" : undefined}
-          className={`mt-2 ${inputClasses}`}
-        />
-        {fieldErrors.name && (
-          <p id="name-error" role="alert" className="mt-2 text-sm text-red-700">
-            {fieldErrorMessage("name", fieldErrors.name)}
-          </p>
-        )}
+      <div className="grid gap-6 sm:grid-cols-2">
+        <div>
+          <label htmlFor="name" className="text-sm text-muted">
+            {t("nameLabel")}
+          </label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            maxLength={100}
+            aria-invalid={Boolean(fieldErrors.name)}
+            aria-describedby={fieldErrors.name ? "name-error" : undefined}
+            className={`mt-2 ${inputClasses}`}
+          />
+          {fieldErrors.name && (
+            <p id="name-error" role="alert" className="mt-2 text-sm text-red-700">
+              {fieldErrorMessage("name", fieldErrors.name)}
+            </p>
+          )}
+        </div>
+
+        <div>
+          <label htmlFor="email" className="text-sm text-muted">
+            {t("emailLabel")}
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            maxLength={200}
+            aria-invalid={Boolean(fieldErrors.email)}
+            aria-describedby={fieldErrors.email ? "email-error" : undefined}
+            className={`mt-2 ${inputClasses}`}
+          />
+          {fieldErrors.email && (
+            <p
+              id="email-error"
+              role="alert"
+              className="mt-2 text-sm text-red-700"
+            >
+              {fieldErrorMessage("email", fieldErrors.email)}
+            </p>
+          )}
+        </div>
       </div>
 
-      <div>
-        <label htmlFor="email" className="text-sm text-muted">
-          {t("emailLabel")}
-        </label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          maxLength={200}
-          aria-invalid={Boolean(fieldErrors.email)}
-          aria-describedby={fieldErrors.email ? "email-error" : undefined}
-          className={`mt-2 ${inputClasses}`}
-        />
-        {fieldErrors.email && (
-          <p
-            id="email-error"
-            role="alert"
-            className="mt-2 text-sm text-red-700"
-          >
-            {fieldErrorMessage("email", fieldErrors.email)}
-          </p>
-        )}
-      </div>
+      <div className="grid gap-6 sm:grid-cols-2">
+        <div>
+          <label htmlFor="phone" className="text-sm text-muted">
+            {t("phoneLabel")}
+          </label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            maxLength={30}
+            className={`mt-2 ${inputClasses}`}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="phone" className="text-sm text-muted">
-          {t("phoneLabel")}
-        </label>
-        <input
-          id="phone"
-          name="phone"
-          type="tel"
-          maxLength={30}
-          className={`mt-2 ${inputClasses}`}
-        />
-      </div>
-
-      <div>
-        <label htmlFor="subject" className="text-sm text-muted">
-          {t("subjectLabel")}
-        </label>
-        <input
-          id="subject"
-          name="subject"
-          type="text"
-          maxLength={150}
-          className={`mt-2 ${inputClasses}`}
-        />
+        <div>
+          <label htmlFor="subject" className="text-sm text-muted">
+            {t("subjectLabel")}
+          </label>
+          <input
+            id="subject"
+            name="subject"
+            type="text"
+            maxLength={150}
+            className={`mt-2 ${inputClasses}`}
+          />
+        </div>
       </div>
 
       <div>
@@ -205,7 +209,7 @@ export function ContactForm() {
           id="message"
           name="message"
           required
-          rows={6}
+          rows={4}
           maxLength={4000}
           aria-invalid={Boolean(fieldErrors.message)}
           aria-describedby={fieldErrors.message ? "message-error" : undefined}
