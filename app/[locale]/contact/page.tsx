@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { GoogleReviews } from "@/components/sections/GoogleReviews";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { siteConfig } from "@/lib/config";
 import { buildMetadata } from "@/lib/seo";
@@ -64,6 +65,8 @@ function ContactPageContent() {
           <ContactForm />
         </Container>
       </Section>
+
+      <GoogleReviews />
     </>
   );
 }

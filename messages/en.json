@@ -245,7 +245,23 @@
     "title": "Get in touch.",
     "intro": "Reach out by phone, email or the form below. Every message is reviewed personally — you'll hear back promptly.",
     "whatsapp": "WhatsApp",
-    "googleReview": "Leave a Google review"
+    "googleReview": "Leave a Google review",
+    "reviewsEyebrow": "Client reviews",
+    "reviewsHeading": "What clients say",
+    "reviews": [
+      {
+        "author": "Jessica Adjedj",
+        "text": "Mr Ackmann has been very professional with us, answered quickly and defended my case with a lot of objectivity. We felt understood and very reassured during the procedure. He knew how to manage our needs with a lot of patience and caring. We recommend!"
+      },
+      {
+        "author": "Elisheva Sotto",
+        "text": "Highly recommend! Professional service, great experience, and courteous."
+      },
+      {
+        "author": "ben hcm",
+        "text": "I contacted Adv. Jonathan Ackmann regarding a real estate matter in Jerusalem. I really appreciated being able to get support in French and clear explanations at every step. He was available, attentive and patient, and answered all my questions quickly and professionally. I highly recommend the Ackmann law firm for its personal approach and expertise."
+      }
+    ]
   },
   "contactForm": {
     "nameLabel": "Name",

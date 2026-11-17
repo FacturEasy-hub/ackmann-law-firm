@@ -245,7 +245,23 @@
     "title": "Nous contacter.",
     "intro": "Par téléphone, e-mail ou via le formulaire ci-dessous. Chaque message est lu personnellement — vous aurez une réponse rapidement.",
     "whatsapp": "WhatsApp",
-    "googleReview": "Laisser un avis Google"
+    "googleReview": "Laisser un avis Google",
+    "reviewsEyebrow": "Avis clients",
+    "reviewsHeading": "Ce qu'en disent nos clients",
+    "reviews": [
+      {
+        "author": "Jessica Adjedj",
+        "text": "M. Ackmann a fait preuve d'un grand professionnalisme, a répondu rapidement et a défendu ma cause avec beaucoup d'objectivité. Nous nous sommes sentis compris et rassurés tout au long de la procédure. Il a su répondre à nos besoins avec beaucoup de patience et d'attention. Nous le recommandons vivement !"
+      },
+      {
+        "author": "Elisheva Sotto",
+        "text": "Je recommande vivement ! Service professionnel, grande expérience et courtoisie."
+      },
+      {
+        "author": "ben hcm",
+        "text": "J'ai contacté Maître Jonathan Ackmann concernant une transaction immobilière à Jérusalem. J'ai particulièrement apprécié de pouvoir bénéficier de conseils en français et d'explications claires à chaque étape. Il s'est montré disponible, attentif et patient, et a répondu à toutes mes questions rapidement et avec professionnalisme. Je recommande vivement le cabinet Ackmann pour son approche personnalisée et son expertise."
+      }
+    ]
   },
   "contactForm": {
     "nameLabel": "Nom",
